@@ -1,0 +1,17 @@
+# This script checks whether the commit message follows Conventional Commits.
+
+# Regular expression for a Conventional Commit
+conventional_commit_regex='^(feat|fix|chore|docs|style|refactor|perf|test)(\([^\)]+\))?: .+'
+
+# Get the most recent commit message
+commit_message=$(cat "$1")
+
+# Check if the commit message follows the Conventional Commits style
+if [[ ! $commit_message =~ $conventional_commit_regex ]]; then
+    echo >&2 "ERROR: The commit message does not follow Conventional Commits."
+    echo >&2 "Example of a correct message: 'feat(component): add a new feature'"
+    exit 1
+fi
+
+# If the commit message is compliant, the commit can proceed
+exit 0
