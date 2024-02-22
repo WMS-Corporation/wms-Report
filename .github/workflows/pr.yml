@@ -28,3 +28,6 @@ jobs:
 
       - name: Run Tests
         run: npm test
+
+      - name: Run EsLint quality check
+        run: npm run eslint
