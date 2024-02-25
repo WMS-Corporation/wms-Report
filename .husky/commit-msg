@@ -3,13 +3,16 @@
 # Regular expression for a Conventional Commit
 conventional_commit_regex='^(feat|fix|chore|docs|style|refactor|perf|test)(\([^\)]+\))?: .+'
 
+# Additional regular expression for allowing "Merge" commits
+merge_commit_regex='^Merge .+'
+
 # Get the most recent commit message
 commit_message=$(cat "$1")
 
-# Check if the commit message follows the Conventional Commits style
-if [[ ! $commit_message =~ $conventional_commit_regex ]]; then
-    echo >&2 "ERROR: The commit message does not follow Conventional Commits."
-    echo >&2 "Example of a correct message: 'feat(component): add a new feature'"
+# Check if the commit message follows the Conventional Commits style or is a "Merge" commit
+if [[ ! $commit_message =~ $conventional_commit_regex ]] && [[ ! $commit_message =~ $merge_commit_regex ]]; then
+    echo >&2 "ERROR: The commit message does not follow Conventional Commits or is not a 'Merge' commit."
+    echo >&2 "Example of a correct message: 'feat(component): add a new feature' or 'Merge branch 'feature-branch''"
     exit 1
 fi
 

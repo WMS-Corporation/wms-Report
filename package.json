@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "coverage": "npm test -- --coverage --collectCoverageFrom=\"./*\"\n",
+    "coverage": "npm test -- --coverage --collectCoverageFrom=\"./**/*.js\" --collectCoverageFrom=!\"./**/coverage/**/*.js\" --collectCoverageFrom=!./.eslintrc.js \n",
     "prepare": "husky",
-    "eslint": "npx eslint ."
+    "eslint": "npx eslint .",
+    "format": "npx eslint --fix .\\*.js"
   },
   "author": "",
   "license": "ISC",
