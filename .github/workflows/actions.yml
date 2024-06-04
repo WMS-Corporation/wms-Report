@@ -10,6 +10,8 @@ jobs:
         uses: dante-ev/latex-action@latest
         with:
           root_file: main.tex
+          compiler: pdflatex
+          args: --max-print-line=10000 -shell-escape -synctex=1 -interaction=nonstopmode -file-line-error -recorder
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
