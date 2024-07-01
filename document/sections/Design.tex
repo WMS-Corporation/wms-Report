@@ -12,8 +12,8 @@ per tenere traccia dell'organizzazione del lavoro.
 Il primo sprint si è concentrato sull'analisi del settore, inclusa la conduzione di
 interviste simulate con il committente e la creazione di tutti gli artefatti necessari
 per l'analisi del dominio. Inoltre, in questo primo sprint abbiamo definito gli strumenti
-DevOps e impostato l'infrastruttura per l'automazione della build, l'integrazione continua
-e il controllo di versione, per poterne beneficiare fin da subito. Questo sprint iniziale
+DevOps e impostato l'infrastruttura per la build automation, continuous integration
+e il versioning control, per poterne beneficiare fin da subito. Questo sprint iniziale
 è stato di fondamentale importanza per il progetto ed è stato svolto in modo collaborativo
 da tutti i membri del gruppo.
 
@@ -25,13 +25,13 @@ Successivamente, il team ha deciso di suddividere il lavoro in quattro sprint ag
     \item \textbf{Sprint 6-7}: dedicati alla rimodellazione e ristrutturazione del codice Client con i relativi test nonché alla stesura stessa di questa relazione.
 \end{itemize}
 
-In totale, sono stati completati sette sprint nel corso del processo di sviluppo del progetto.
+In totale, sono stati completati sette sprint nel corso del processo di sviluppo del progetto.\vspace{3mm}
 
 Parallelamente al processo di sviluppo, è stata adottata una metodologia di design chiamata \textbf{UCD (User Centered Design)}. La scelta di questa metodologia è stata determinata dal fatto che, fin dalle prime fasi di progettazione, si è voluto dare priorità alla \textbf{HCI (Human Computer Interaction)}, concentrando l’attenzione sulle necessità degli utenti e sull’obiettivo di garantire un’usabilità ottimale per migliorare l’esperienza dell’utente. Per quanto riguarda l’implementazione dell’applicazione, il focus si è posto sul dover soddisfare le esigenze e le richieste degli utenti. Gli User a cui si farà riferimento successivamente sono rappresentati attraverso una serie di profili chiamati “personas”, che riflettono un possibile pubblico di riferimento dell’applicazione.
 \newpage
 \subsection{Target User Analysis}
 
-Nel contesto della gestione di un magazzino alimentare, sia gli utenti amministrativi che operativi si trovano a dover affrontare una serie di compiti complessi e cruciali. Gli utenti amministrativi sono responsabili della supervisione generale delle operazioni, del monitoraggio delle scorte, della gestione degli ordini e della garanzia della qualità e sicurezza degli articoli. D’altra parte, gli utenti operativi sono responsabili dell’esecuzione delle attività quotidiane, come il carico e lo scarico delle merci e il mantenimento della pulizia e dell’ordine nel magazzino.
+Nel contesto della gestione di un magazzino alimentare, sia gli utenti amministrativi che operativi si trovano a dover affrontare una serie di compiti complessi e cruciali. Gli utenti amministrativi sono responsabili della supervisione generale delle operazioni, del monitoraggio delle scorte, della gestione degli ordini e della garanzia della qualità e sicurezza degli articoli. Dall' parte, gli utenti operativi sono responsabili dell’esecuzione delle attività quotidiane, come il carico e lo scarico delle merci.
 
 \subsubsection{Descrizione del Target di Utenti}
 
@@ -53,9 +53,8 @@ Il target di utenza è suddiviso in due categorie principali:
 
 \begin{itemize}
     \item \textbf{Utenti Amministrativi}: Responsabili della supervisione generale del magazzino, monitoraggio delle scorte, gestione degli ordini e garanzia della qualità e sicurezza degli articoli. Hanno bisogno di strumenti di gestione avanzati, dashboard centralizzate e notifiche proattive per gestire situazioni critiche.
-    \item \textbf{Utenti Operativi}: Responsabili delle operazioni quotidiane nel magazzino, come carico e scarico delle merci e mantenimento dell'ordine. Necessitano di un’interfaccia user-friendly, istruzioni dettagliate e supporto in tempo reale per eseguire le loro attività in modo efficiente.
+    \item \textbf{Utenti Operativi}: Responsabili delle operazioni quotidiane nel magazzino, come carico e scarico delle merci e mantenimento dell'ordine. Necessitano di un’interfaccia user-friendly, istruzioni dettagliate e supporto per eseguire le loro attività in modo efficiente.
 \end{itemize}
-
 
 \subsubsection{Personas}
 
@@ -63,13 +62,15 @@ Di seguito vengono riportati diversi personas, rappresentazioni ipotetiche di ut
 
 \textbf{Persona: Mario, 45 anni, Responsabile del Magazzino}
 
-\textbf{Scenario d’uso}: Mario è il responsabile del magazzino alimentare. Ha un'esperienza di oltre 20 anni nel settore e si occupa principalmente della supervisione delle operazioni, del monitoraggio delle scorte e della gestione degli ordini.
+\textbf{Scenario d’uso}: Mario è il responsabile del magazzino alimentare. Ha un'esperienza di oltre 20 anni nel settore e si occupa principalmente della supervisione delle operazioni, del monitoraggio delle scorte, della gestione degli ordini e della gestione degli utenti.
 
 \begin{itemize}
-    \item Mario accede al sito effettuando il login con le sue credenziali amministrative.
+    \item Mario accede al sito effettuando il login con le sue credenziali amministrative o si registra se è il suo primo accesso.
     \item Utilizza la dashboard per monitorare lo stato del magazzino, inclusi lo stato degli ordini, task e temperatura delle varie zone.
     \item Riceve notifiche proattive riguardanti deviazioni di temperatura e scorte a rischio di esaurimento.
-    \item Gestisce gli ordini e monitora la qualità degli articoli stoccati.
+    \item Gestisce gli ordini e monitora la quantità degli articoli stoccati.
+    \item Gestite i task da assegnare agli utenti operativi.
+    \item Gestisce le informazioni relative agli utenti.
 \end{itemize}
 
 \textbf{Persona: Luca, 30 anni, Operatore di Magazzino}
@@ -77,10 +78,9 @@ Di seguito vengono riportati diversi personas, rappresentazioni ipotetiche di ut
 \textbf{Scenario d’uso}: Luca è un operatore di magazzino che si occupa del carico e dello scarico delle merci. È esperto nell'uso di attrezzature per la movimentazione dei materiali e segue rigorosamente le procedure di sicurezza.
 
 \begin{itemize}
-    \item Luca accede al sito utilizzando le sue credenziali operative.
-    \item Utilizza un’interfaccia intuitiva per registrare il carico e lo scarico delle merci.
-    \item Segue istruzioni dettagliate e riceve supporto in tempo reale per garantire l’esecuzione corretta delle attività.
-    \item Mantiene la pulizia e l’ordine nel magazzino seguendo le procedure indicate nell’applicazione.
+    \item Luca accede al sito utilizzando le sue credenziali operative o si registra se è al primo accesso.
+    \item Utilizza un’interfaccia intuitiva per registrare l'avanzamento e il completamente dei task per il carico e lo scarico delle merci.
+    \item Segue istruzioni dettagliate e riceve supporto per garantire l’esecuzione corretta delle attività.
 \end{itemize}
 
 Questi profili aiutano a mantenere il focus sulle esigenze degli utenti durante tutte le fasi di sviluppo e progettazione dell'applicazione. La metodologia \textbf{UCD (User Centered Design)} e il principio \textbf{KISS (Keep It Simple, Stupid)} sono stati adottati per garantire che l'applicazione sia facile da usare e risponda efficacemente alle esigenze degli utenti, migliorando l'efficienza operativa e la soddisfazione generale.
