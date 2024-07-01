@@ -1,0 +1,126 @@
+version: '3'
+services:
+  wms-product:
+    image: pietrolelli2/wms-product:latest
+    environment:
+      DB_NAME: WMS
+      DB_CONN_STRING: mongodb://mongodb:27017
+      COLLECTION: Product
+      COLLECTION_USER: User
+      COUNTER_COLLECTION: Counter
+      JWT_SECRET: secret_key
+      PORT: 4002
+
+    ports:
+      - "4002:4002"
+    depends_on:
+      - mongodb
+    networks:
+      - wms-network
+
+  wms-users:
+    image: pietrolelli2/wms-users:latest
+    environment:
+      COUNTER_COLLECTION: Counter
+      DB_NAME: WMS
+      DB_CONN_STRING: mongodb://mongodb:27017
+      USER_COLLECTION: User
+      JWT_SECRET: secret_key
+      PORT: 4001
+    ports:
+      - "4001:4001"
+    depends_on:
+      - mongodb
+    networks:
+      - wms-network
+
+  wms-task:
+    image: pietrolelli2/wms-task:latest
+    environment:
+      DB_NAME: WMS
+      DB_CONN_STRING: mongodb://mongodb:27017
+      TASK_COLLECTION: Task
+      USER_COLLECTION: User
+      COUNTER_COLLECTION: Counter
+      JWT_SECRET: secret_key
+      PORT: 4003
+    ports:
+      - "4003:4003"
+    depends_on:
+      - mongodb
+    networks:
+      - wms-network
+
+  wms-order:
+    image: pietrolelli2/wms-order:latest
+    environment:
+      DB_NAME: WMS
+      DB_CONN_STRING: mongodb://mongodb:27017
+      ORDER_COLLECTION: Order
+      USER_COLLECTION: User
+      COUNTER_COLLECTION: Counter
+      JWT_SECRET: secret_key
+      PORT: 4004
+    ports:
+      - "4004:4004"
+    depends_on:
+      - mongodb
+    networks:
+      - wms-network
+
+  wms-logistic:
+    image: pietrolelli2/wms-logistic:latest
+    environment:
+      DB_NAME: WMS
+      DB_CONN_STRING: mongodb://mongodb:27017
+      STORAGE_COLLECTION: Storage
+      ZONE_COLLECTION: Zone
+      CORRIDOR_COLLECTION: Corridor
+      SHELF_COLLECTION: Shelf
+      USER_COLLECTION: User
+      COUNTER_COLLECTION: Counter
+      JWT_SECRET: secret_key
+      PORT: 4005
+      GATEWAY_URL: http://wms-gateway:3000
+      TEMPERATURE_REFRIGERATED_VALID_RANGE: -18;0
+      TEMPERATURE_NOT_REFRIGERATED_VALID_RANGE: 0;25
+    ports:
+      - "4005:4005"
+    depends_on:
+      - mongodb
+    networks:
+      - wms-network
+
+  wms-gateway:
+    image: pietrolelli2/wms-gateway:latest
+    environment:
+      PORT: 3000
+      NAME_AND_PORT_SERVICES_LIST: users,http://wms-users:4001;products,http://wms-product:4002;tasks,http://wms-task:4003;orders,http://wms-order:4004;logistics,http://wms-logistic:4005
+    ports:
+      - "3000:3000"
+    networks:
+      - wms-network
+  
+  wms_webapplication:
+    image: unimike/wms-webapplication:latest
+    environment:
+      PORT: 4000
+      REACT_APP_API_SERVER_URL: http://wms-gateway:3000
+      REACT_APP_TEMPERATURE_REFRIGERATED_VALID_RANGE: "-18;0"
+      REACT_APP_TEMPERATURE_NOT_REFRIGERATED_VALID_RANGE: "0;25"
+    ports:
+      - "4000:4000"
+    networks:
+      - wms-network
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - wms-network
+
+networks:
+  wms-network:
+    driver: bridge
+
