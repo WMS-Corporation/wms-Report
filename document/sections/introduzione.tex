@@ -8,11 +8,11 @@ L'applicazione sarà progettata per permettere agli utenti con mansioni amminist
 
 Nel contesto della gestione di un magazzino alimentare, sia gli utenti amministrativi che operativi si trovano a dover affrontare una serie di compiti complessi e cruciali. Gli utenti amministrativi sono responsabili della supervisione generale delle operazioni, del monitoraggio delle scorte, della gestione degli ordini e della garanzia della qualità e sicurezza degli articoli. D'altra parte, gli utenti operativi sono responsabili dell'esecuzione delle attività quotidiane, come il carico e lo scarico delle merci e il mantenimento della pulizia e dell'ordine nel magazzino.
 
-L'applicazione che intendiamo sviluppare fornirà funzionalità specifiche per entrambi i tipi di utenti. Per gli utenti amministrativi, l'applicazione offrirà una dashboard centralizzata e in tempo reale che fornirà informazioni dettagliate sui movimenti degli articoli, lo stato degli ordini e il monitoraggio delle temperature nelle zone refrigerate. Inoltre, attraverso notifiche proattive, gli utenti amministrativi saranno avvisati tempestivamente di situazioni critiche come deviazioni di temperatura o scorte a rischio di esaurimento.
+L'applicazione che intendiamo sviluppare fornirà funzionalità specifiche per entrambi i tipi di utenti. Per gli utenti amministrativi, l'applicazione offrirà una dashboard centralizzata che fornirà informazioni dettagliate sui movimenti degli articoli, lo stato degli ordini e il monitoraggio delle temperature nelle zone refrigerate. Inoltre, attraverso notifiche proattive, gli utenti amministrativi saranno avvisati tempestivamente di situazioni critiche come deviazioni di temperatura in situazioni critiche o scorte a rischio di esaurimento.
 
 Per gli utenti operativi, l'applicazione semplificherà notevolmente le operazioni quotidiane. Una funzionalità chiave sarà la possibilità di eseguire facilmente compiti come il carico e lo scarico delle merci attraverso un'interfaccia intuitiva e user-friendly. Inoltre, l'applicazione fornirà agli utenti operativi istruzioni dettagliate e supporto in tempo reale per garantire l'esecuzione corretta delle attività.
 
-Lo scopo di questo progetto è realizzare un'applicazione per la gestione e il monitoraggio di un magazzino con zone refrigerate, attraverso l'adozione di un approccio basato sul Domain-Driven Design (DDD). Questo significa che ci siamo concentrati sulla comprensione approfondita e sulla modellazione accurata del dominio di business.
+Lo scopo di questo progetto è realizzare un'applicazione per la gestione e il monitoraggio di un magazzino con zone refrigerate, attraverso l'adozione di un approccio basato sul Domain-Driven Design (DDD). Questo significa che ci siamo concentrati sulla comprensione approfondita e sulla modellazione accurata del dominio di business nella fase iniziale di analisi.
 
 L'approccio DDD è stato integrato con strumenti per la Continuous Integration e il DevOps, che ci hanno guidato verso le seguenti scelte di sviluppo:
 \begin{itemize}
@@ -30,8 +30,8 @@ La web application si articola in due interfacce principali, una dedicata agli u
 
 All'interno dell'applicazione, sarà possibile:
 \begin{itemize}
-    \item per gli utenti amministrativi: monitorare le scorte, gestire gli ordini, assegnare task specifici agli operai, controllare movimentazioni degli articoli e stato delle zone refrigerate.
-    \item per gli operai: consultare i compiti assegnati dal proprio superiore.
+    \item per gli utenti amministrativi: monitorare le scorte, gestire gli ordini, assegnare task specifici agli operai, controllare movimentazioni degli articoli e stato delle zone refrigerate, getire gli utenti.
+    \item per gli operai: consultare ed eventualmente modifiare (avviare, completare) i compiti a loro assegnati.
 \end{itemize}
 
 Il sistema sarà caratterizzato da due componenti:
