@@ -1,0 +1,42 @@
+\section{Introduzione}
+
+Il progetto mira alla realizzazione di un'applicazione web completa per la gestione e il monitoraggio di un magazzino alimentare.
+
+L'applicazione sarà progettata per permettere agli utenti con mansioni amministrative di gestire e monitorare il magazzino, mentre agli utenti operativi faciliterà compiti pratici come la movimentazione delle merci, inclusi carico e scarico.
+
+\subsection{Scenario}
+
+Nel contesto della gestione di un magazzino alimentare, sia gli utenti amministrativi che operativi si trovano a dover affrontare una serie di compiti complessi e cruciali. Gli utenti amministrativi sono responsabili della supervisione generale delle operazioni, del monitoraggio delle scorte, della gestione degli ordini e della garanzia della qualità e sicurezza degli articoli. D'altra parte, gli utenti operativi sono responsabili dell'esecuzione delle attività quotidiane, come il carico e lo scarico delle merci e il mantenimento della pulizia e dell'ordine nel magazzino.
+
+L'applicazione che intendiamo sviluppare fornirà funzionalità specifiche per entrambi i tipi di utenti. Per gli utenti amministrativi, l'applicazione offrirà una dashboard centralizzata e in tempo reale che fornirà informazioni dettagliate sui movimenti degli articoli, lo stato degli ordini e il monitoraggio delle temperature nelle zone refrigerate. Inoltre, attraverso notifiche proattive, gli utenti amministrativi saranno avvisati tempestivamente di situazioni critiche come deviazioni di temperatura o scorte a rischio di esaurimento.
+
+Per gli utenti operativi, l'applicazione semplificherà notevolmente le operazioni quotidiane. Una funzionalità chiave sarà la possibilità di eseguire facilmente compiti come il carico e lo scarico delle merci attraverso un'interfaccia intuitiva e user-friendly. Inoltre, l'applicazione fornirà agli utenti operativi istruzioni dettagliate e supporto in tempo reale per garantire l'esecuzione corretta delle attività.
+
+Lo scopo di questo progetto è realizzare un'applicazione per la gestione e il monitoraggio di un magazzino con zone refrigerate, attraverso l'adozione di un approccio basato sul Domain-Driven Design (DDD). Questo significa che ci siamo concentrati sulla comprensione approfondita e sulla modellazione accurata del dominio di business.
+
+L'approccio DDD è stato integrato con strumenti per la Continuous Integration e il DevOps, che ci hanno guidato verso le seguenti scelte di sviluppo:
+\begin{itemize}
+    \item Scomposizione dell’architettura monolitica del Server in più servizi indipendenti;
+    \item Utilizzo di tecnologie più recenti e performanti;
+    \item Utilizzo dei principi di progettazione del software DRY, KISS e SOLID;
+    \item Aggiunta di test per garantire la correttezza e aumentare la qualità del codice.
+\end{itemize}
+\newpage
+\subsection{Descrizione in dettaglio}
+
+Il progetto propone lo sviluppo di una soluzione software web-based per la gestione e il monitoraggio di un magazzino alimentare, rivolgendosi sia agli utenti amministrativi (\textbf{Admin User}) che agli utenti operativi (\textbf{Operational User}). L'obiettivo principale è fornire agli utenti amministrativi strumenti per gestire e monitorare il magazzino, mentre agli utenti operativi si intende facilitare le operazioni pratiche come la movimentazione delle merci, inclusi carico e scarico.
+
+La web application si articola in due interfacce principali, una dedicata agli utenti amministrativi e una agli utenti operativi. L'accesso a entrambe le interfacce è consentito solo previa registrazione e autenticazione.
+
+All'interno dell'applicazione, sarà possibile:
+\begin{itemize}
+    \item per gli utenti amministrativi: monitorare le scorte, gestire gli ordini, assegnare task specifici agli operai, controllare movimentazioni degli articoli e stato delle zone refrigerate.
+    \item per gli operai: consultare i compiti assegnati dal proprio superiore.
+\end{itemize}
+
+Il sistema sarà caratterizzato da due componenti:
+\begin{itemize}
+    \item \textbf{Web Application}: accessibile da qualunque dispositivo connesso alla rete aziendale, fornisce un'interfaccia user-friendly per interagire con il sistema.
+    \item \textbf{Web Server}: composto da microservizi, gestisce la logica di business e le operazioni di backend dell'applicazione.
+\end{itemize}
+\newpage
