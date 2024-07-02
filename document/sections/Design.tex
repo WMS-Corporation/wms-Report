@@ -367,7 +367,19 @@ blocks vengono utilizzati nei microservizi:
     \item \textbf{Repository}: fungono da interfacce tra database e il microservizio per l'accesso ai dati. Gestiscono le operazioni di persistenza dei dati e forniscono metodi per recuperare e manipolare gli oggetti del dominio.
     \item \textbf{Service}: contengono la logica di business e coordinano le operazioni cruciali all'interno di un dominio specifico. Si occupano di gestire operazioni complesse che coinvolgono una o più entità, definite all'interno del microservizio stesso.
 \end{itemize}
+
 \subsubsection{Frontend}
+La parte di frontend è stata progettata seguendo il pattern \textit{MVC} (Model-View-Controller) per favorire la manutenibilità ed estendibilità del codice. Di seguito sono dettagliati i componenti principali di questo pattern nell'ambito dell'applicazione:
+
+\begin{itemize}
+    \item \textbf{Model}: I modelli gestiscono la struttura dei dati. Questi modelli sono responsabili della gestione dei dati senza occuparsi della presentazione o dell'interazione con l'utente.
+    
+    \item \textbf{View}: I Componenti React agiscono come la View nel pattern MVC, gestendo la presentazione e l'interazione con l'utente. Queste componenti utilizzano gli hook di React, come \textit{useState} per la gestione dello stato interno e \textit{useEffect} per la gestione degli effetti collaterali, per reagire ai cambiamenti e presentare i dati all'utente in modo reattivo.
+    
+    \item \textbf{Controller}: I Controller mediando l'interazione tra la View e il Model. Gestiscono la logica di business, come il recupero, l'aggiunta, la modifica e l'eliminazione degli ordini, e comunicano con il backend attraverso degli specifici service creati per gestirne le relative chiamate asincrone.
+\end{itemize}
+
+Per ogni \textit{Component}, che nell'applicativo rappresentano la vista del pattern MVC, è stato creato un \textit{Controller} che si occupa di mediare tra la vista e il relativo \textit{Model}, garantendo una chiara separazione delle responsabilità e facilitando lo sviluppo e la manutenzione del codice.
 
 \subsection{Storyboard}
 
