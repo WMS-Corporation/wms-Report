@@ -3,3 +3,102 @@
 
 
 \subsection{Aggiornamento real-time con Socket-IO}
+Al fine di disaccoppiare il backend dal frontend, è stato utilizzato un design pattern Observer, in modo tale che il backend possa notificare il frontend di eventuali eventi, senza che il frontend debba effettuare richieste HTTP periodiche per verificare lo stato dell'applicazione.
+
+Per implementare tale funzionalità di aggiornamento in tempo reale, si è reso necessario l'utilizzo di Socket.IO. 
+La libreria fa uso di canali di comunicazione per i quali viene specificato un topic. 
+In questo modo è possibile utilizzare diversi canali di comunicazione che corrispondono a diversi eventi che si verificano all'interno dell'applicativo. 
+
+Nel nostro caso è stato configurato Socket.IO per le gestione dei seguenti topic:
+\begin{itemize}
+  \item "temperature-alert" per notificare l'evento di superamento della soglia di temperatura impostata;
+  \item "lowStockAlert" per notificare l'evento di esaurimento delle scorte di un prodotto;
+\end{itemize}
+
+Poichè il backend è strutturato a microservizi accessibili tramite il microservizio gateway, è stato necessario configurare il server di Socket.IO per operare come gateway degli eventi, in modo tale che possa recuperare gli eventi dai microservizi e notificarli ai client.
+
+\begin{figure}[H]
+\centering
+\begin{minted}{javascript}
+    const io = socketio(server, {
+        cors: {
+            origin: corsOptions.origin,
+            methods: ["GET", "POST"],
+            allowedHeaders: ["my-custom-header"],
+            credentials: true,
+        }
+    });
+
+    io.on('connection', (socket) => {
+        console.log('New connection:', socket.id);
+      
+        socket.on('temperature-alert', (data) => {
+          console.log('Temperature alert received:', data);
+          io.emit('temperature-alert', data);
+        });
+        socket.on('lowStockAlert', (data) => {
+          console.log('Low stock alert:', data);
+          io.emit('lowStockAlert', data);
+        });
+      });
+\end{minted}
+\captionof{listing}{ Utilizzo di Socket.IO server side: microservizio gateway }
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{minted}{javascript}
+    // socket initialization
+    function connectSocket(gatewayUrl) {
+        socket = socketClient(gatewayUrl);
+        socket.on('connect', () => {
+            console.log(`Connected to gateway at ${gatewayUrl}`);
+        });
+    }
+    
+    function getSocket() {
+        if (!socket) {
+            throw new Error("Socket not initialized. Call connectSocket first.");
+        }
+        return socket;
+    }
+
+    // temperature alert
+    if (zone._temperature >= max || zone._temperature <= min) {
+        const socket = getSocket();
+        socket.emit('temperature-alert', { zone: zone._codZone, temperature: zone._temperature });
+    }
+
+    // product quantity alert
+    if (product._stock < threshold) {
+        const socket = getSocket();
+        socket.emit('lowStockAlert', { productCode: product._codProduct, totalStock: product._stock });
+    }
+\end{minted}
+\captionof{listing}{ Utilizzo di Socket.IO server side: microservizio logistic }
+\end{figure}
+
+Lato client è stato sufficiente registrare tramite la socket, una callback sui vari topic, andando poi a notificare gli eventi di interesse direttamente agli utenti.
+
+\begin{figure}[H]
+\centering
+\begin{minted}{javascript}
+    useEffect(() => {
+        const socket = io(SERVER_URL);
+        socket.on('temperature-alert', (data) => {
+            toast(`Temperature alert: Zone ${data.zone} - ${data.temperature}°C`);
+        });
+
+        socket.on('lowStockAlert', (data) => {
+            toast(`Product stock alert: Product ${data.productCode} - Actual quantity ${data.totalStock}`);
+        });
+
+        return () => {
+            socket.off('temperature-alert');
+            socket.off('lowStockAlert');
+            socket.disconnect();
+        };
+    }, []);
+\end{minted}
+\captionof{listing}{ Utilizzo di Socket.IO client side per la ricezione degli eventi }
+\end{figure}

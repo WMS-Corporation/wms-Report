@@ -1,0 +1,28 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{c+c1}{// socket initialization}
+\PYG{+w}{    }\PYG{k+kd}{function}\PYG{+w}{ }\PYG{n+nx}{connectSocket}\PYG{p}{(}\PYG{n+nx}{gatewayUrl}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n+nx}{socket}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{socketClient}\PYG{p}{(}\PYG{n+nx}{gatewayUrl}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n+nx}{socket}\PYG{p}{.}\PYG{n+nx}{on}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}connect\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{()}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+sb}{`Connected to gateway at }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nx}{gatewayUrl}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+sb}{`}\PYG{p}{);}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{});}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{k+kd}{function}\PYG{+w}{ }\PYG{n+nx}{getSocket}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n+nx}{socket}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{k}{throw}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+ne}{Error}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Socket not initialized. Call connectSocket first.\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{k}{return}\PYG{+w}{ }\PYG{n+nx}{socket}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{c+c1}{// temperature alert}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n+nx}{zone}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}temperature}\PYG{+w}{ }\PYG{o}{\PYGZgt{}=}\PYG{+w}{ }\PYG{n+nx}{max}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{n+nx}{zone}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}temperature}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n+nx}{min}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{socket}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{getSocket}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n+nx}{socket}\PYG{p}{.}\PYG{n+nx}{emit}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}temperature\PYGZhy{}alert\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n+nx}{zone}\PYG{o}{:}\PYG{+w}{ }\PYG{n+nx}{zone}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}codZone}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{temperature}\PYG{o}{:}\PYG{+w}{ }\PYG{n+nx}{zone}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}temperature}\PYG{+w}{ }\PYG{p}{\PYGZcb{});}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{c+c1}{// product quantity alert}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n+nx}{product}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}stock}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n+nx}{threshold}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{socket}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{getSocket}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n+nx}{socket}\PYG{p}{.}\PYG{n+nx}{emit}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}lowStockAlert\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n+nx}{productCode}\PYG{o}{:}\PYG{+w}{ }\PYG{n+nx}{product}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}codProduct}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{totalStock}\PYG{o}{:}\PYG{+w}{ }\PYG{n+nx}{product}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}stock}\PYG{+w}{ }\PYG{p}{\PYGZcb{});}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

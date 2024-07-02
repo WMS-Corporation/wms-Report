@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{n+nx}{useEffect}\PYG{p}{(()}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{socket}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{io}\PYG{p}{(}\PYG{n+nx}{SERVER\PYGZus{}URL}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n+nx}{socket}\PYG{p}{.}\PYG{n+nx}{on}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}temperature\PYGZhy{}alert\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n+nx}{toast}\PYG{p}{(}\PYG{l+s+sb}{`Temperature alert: Zone }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{zone}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+sb}{ \PYGZhy{} }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{temperature}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+sb}{°C`}\PYG{p}{);}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{});}
+
+\PYG{+w}{        }\PYG{n+nx}{socket}\PYG{p}{.}\PYG{n+nx}{on}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}lowStockAlert\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n+nx}{toast}\PYG{p}{(}\PYG{l+s+sb}{`Product stock alert: Product }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{productCode}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+sb}{ \PYGZhy{} Actual quantity }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{totalStock}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+sb}{`}\PYG{p}{);}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{});}
+
+\PYG{+w}{        }\PYG{k}{return}\PYG{+w}{ }\PYG{p}{()}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n+nx}{socket}\PYG{p}{.}\PYG{n+nx}{off}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}temperature\PYGZhy{}alert\PYGZsq{}}\PYG{p}{);}
+\PYG{+w}{            }\PYG{n+nx}{socket}\PYG{p}{.}\PYG{n+nx}{off}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}lowStockAlert\PYGZsq{}}\PYG{p}{);}
+\PYG{+w}{            }\PYG{n+nx}{socket}\PYG{p}{.}\PYG{n+nx}{disconnect}\PYG{p}{();}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{};}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{},}\PYG{+w}{ }\PYG{p}{[]);}
+\end{Verbatim}
