@@ -1,6 +1,24 @@
 \section{Deployment}
+Il processo di deployment del nostro progetto è stato completamente automatizzato attraverso l'utilizzo di GitHub Actions, permettendo una Continuous Integration (CI) e Continuous Deployment (CD) efficiente. Questo approccio riduce significativamente il tempo e gli sforzi necessari per il rilascio di nuove versioni dell'applicativo.
+
 \subsection{Continuous Integration e Continuous Deployment}
+Utilizzando GitHub Actions, ogni volta che un commit viene effettuato sul main, per ogni componente sia del backend che del frontend, viene automaticamente avviato un workflow che esegue i seguenti passaggi:
+\begin{enumerate}
+    \item Test automatici per verificare l'integrità e la correttezza del codice.
+    \item Build dell'immagine Docker.
+    \item Push delle immagini Docker su Docker-Hub.
+\end{enumerate}
 
 \subsection{Esecuzione}
+Per eseguire l'applicazione, l'utente deve avere Docker installato sulla propria macchina. Il deployment dell'applicativo è facilitato tramite l'uso di \texttt{docker-compose}, che permette di configurare e avviare tutti i servizi necessari con un unico comando. Il file \texttt{docker-compose.yml}, presente nel repository di questo Report, è pre-configurato per soddisfare le esigenze comuni, ma può essere personalizzato secondo le necessità.
 
 \subsection{Utilizzo}
+Per avviare l'applicazione, seguire i seguenti passi:
+\begin{enumerate}
+    \item Clonare il repository di questa relazione o scaricare il file docker-compose.yml.
+    \item Aprire un terminale e navigare nella directory del progetto clonato o dove si è scaricato il file yml.
+    \item Eseguire il comando \texttt{docker-compose up} per avviare tutti i servizi definiti nel file \texttt{docker-compose.yml}.
+\end{enumerate}
+A questo punto, l'applicazione sarà accessibile all'indirizzo \texttt{http://localhost:5000} (o un altro indirizzo configurabile nel file docker-compose.yml), pronta per essere utilizzata partendo dalla registrazione del primo utente che sarà di default un utente amministrativo.
+
+\textbf{Nota:} MongoDB è incluso come servizio nel file \texttt{docker-compose.yml}, quindi non è necessaria alcuna configurazione manuale del database. Al primo avvio, Docker si occuperà di creare il database MongoDB e l'applicativo penserà alla prima configurazione, rendendo il processo di setup iniziale estremamente semplice e veloce.
