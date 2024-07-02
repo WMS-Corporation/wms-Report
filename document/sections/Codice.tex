@@ -34,7 +34,7 @@ Il \textbf{Task Model} gestisce la struttura dei dati relativi ai task.\\ Questo
 
 
 \subsubsection{Task View}
-Il \textbf{Task View} è un componente React che gestisce la presentazione dei dati relativi ai task e l'interazione con l'utente.\\
+Il \textbf{Component Task} è un componente React che gestisce la presentazione dei dati relativi ai task e l'interazione con l'utente.\\
 Utilizza gli hook di React per la gestione dello stato interno e degli effetti collaterali, come il caricamento dei task dal backend e la gestione delle azioni dell'utente.
 \begin{figure}[H]
     \centering
@@ -66,10 +66,6 @@ Utilizza gli hook di React per la gestione dello stato interno e degli effetti c
 
         // all other handles
 
-        if (loading) {
-            return <div>Loading...</div>;
-        }
-
         if (addingTask) {
             return <TaskAddForm task={new TaskModel()} onSave={handleSave} onCancel={handleCancel} error={error}/>;
         } else if (editingTask) {
@@ -81,7 +77,7 @@ Utilizza gli hook di React per la gestione dello stato interno e degli effetti c
 
         export default Task;
 \end{minted}
-\captionof{listing}{ Component }
+\captionof{listing}{ Component del Task }
 \end{figure}
 
 
@@ -113,7 +109,7 @@ la modifica e l'eliminazione. Comunica con il backend attraverso specifici servi
         return await removeTask(task._codTask);
         };
 \end{minted}
-\captionof{listing}{ Controller }
+\captionof{listing}{ Controller del Task }
 \end{figure}
 
 \subsubsection{Task Service}
@@ -143,7 +139,7 @@ gestendo sia le intestazioni di autenticazione sia il trattamento delle risposte
         };
 
 \end{minted}
-\captionof{listing}{ Servizio }
+\captionof{listing}{ Servizio dei Task }
 \end{figure}
 
 \subsection{Aggiornamento real-time con Socket-IO}
