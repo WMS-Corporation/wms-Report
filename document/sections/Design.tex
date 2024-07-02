@@ -418,7 +418,7 @@ Una volta completata la registrazione si viene reindirizzati alla propria Home P
     \label{fig:homePageAdmins}
 \end{figure}
 
-L'home dell Admin offre una panoramica delle principali attività e metriche del magazzino.
+L'Home Page dell' Admin offre una panoramica delle principali attività e metriche del magazzino.
 In alto, vengono mostrate tre statistiche chiave: il numero di task e ordini non completati, e il numero di utenti
 Operational registrati.\\
 
@@ -466,7 +466,7 @@ Qualora non venissero inseriti correttamente tutti i dati verrà mostrato un mes
     \label{fig:editProductPage}
 \end{figure}
 
-Cliccando sull'icona \textbf{edit} di un determinato prodotto, nella product page si apre un form, che consente
+Cliccando sull'icona \textbf{edit} di un determinato prodotto, nella product page, si apre un form che consente
 all'Admin di poter modificare i dettagli del prodotto.\\
 Cliccando sul bottone \textbf{Save} vengono salvate le modifiche, mentre cliccando sul bottone \textbf{Cancel} si viene
 riportare alla product page.
@@ -480,7 +480,7 @@ riportare alla product page.
 
 Cliccando sulla voce \textbf{Tasks} nella sidebar, l'utente viene reindirizzato alla pagina di gestione dei tasks.\\
 Questa pagina offre una visualizzazione tabellare dei task assegnati ai vari operatori,
-mostrando le informazioni chiave per ogni task.\\
+mostrando le informazioni chiave per ognuno.\\
 Nella colonna di destra, sono presenti delle icone che consento di modificare, eliminare oppure visualizzare meglio
 i dati di un singolo task.\\
 In alto a destra è presente un pulsante \textbf{Add Task} che consente di aggiungere un nuovo task al sistema.
@@ -497,7 +497,7 @@ all'Admin di poter creare un nuovo task.\\
 Sotto il form, è presente una sezione denominata \textbf{Products Details} che mostra i dettagli dei prodotti inclusi
 nel task in formato tabellare.\\Gli utenti possono aggiungere più prodotti al task utilizzando il pulsante \textbf{Add Product}.\\
 Infine, in basso, sono presenti i pulsanti \textbf{Save} per salvare il task e \textbf{Cancel} per annullare l'operazione
-e tornare nella task page.
+e tornare nella task page.\\
 Qualora non venissero inseriti correttamente tutti i dati verrà mostrato un messaggio di errore.
 
 \begin{figure}[H]
@@ -508,7 +508,7 @@ Qualora non venissero inseriti correttamente tutti i dati verrà mostrato un mes
 \end{figure}
 
 Cliccando sull'icona \textbf{edit} di un determinato task, nella task page si apre un form simile a quello che
-consente di aggiungere un nuovo task, che permette all'Admin di poter modificare i dettagli del task.\\
+consente di aggiungere un nuovo task, che permette all'Admin di modificarne i dati.\\
 Cliccando sul bottone \textbf{Save} vengono salvate le modifiche, mentre cliccando sul bottone \textbf{Cancel} si viene
 riportare alla product page.
 
@@ -642,7 +642,7 @@ Cliccando sull'icona \textbf{view} di una determinata zona nella pagina di gesti
 Questa pagina presenta una lista dei corridoi in formato tabellare.\\
 Nella colonna di destra sono presenti icone che permettono di modificare, eliminare o visualizzare in dettaglio i dati di ciascun corridoio, inclusi gli scaffali presenti.\\
 In alto a destra è disponibile un pulsante \textbf{Add Corridor} per aggiungere un nuovo corridoio alla zona.\\
-In basso a sinistra è presente il pulsante \textbf{Back to Storage} per tornare alla pagina di gestione degli storage.
+In basso a sinistra è presente il pulsante \textbf{Back to Storage} per tornare alla storage page.
 
 \begin{figure}[H]
     \centering
@@ -665,12 +665,159 @@ Qualora non venissero inseriti correttamente tutti i dati verrà mostrato un mes
 \end{figure}
 
 Cliccando sull'icona \textbf{edit} di un determinato corridoio, nella zone page, si apre un form
-che permette all'Admin di poter modificare i dettagli di quest'ultimo.\\
+che permette all'Admin di poter modificare il nome di quest'ultimo.\\
 Cliccando sul bottone \textbf{Save} vengono salvate le modifiche, mentre cliccando sul bottone \textbf{Cancel} si viene
 riportati alla zone page.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/viewCorridor.png}
+    \caption{Corridor Page}
+    \label{fig:corridorPage}
+\end{figure}
 
+Cliccando sull'icona \textbf{view} di un determinato corridoio nella pagina di gestione delle zone,
+l’admin viene reindirizzato alla pagina di visualizzazione dei dati del corridoio selezionato e degli scaffali che la compongono.\\
+Questa pagina presenta una lista degli scaffali in formato tabellare.\\
+Nella colonna di destra sono presenti icone che permettono di modificare, eliminare o visualizzare in dettaglio i dati di ciascun scaffale, inclusi i prodotti presenti al loro interno.\\
+In alto a destra è disponibile un pulsante \textbf{Add Shelf} per aggiungere un nuovo scaffale al corridoio.\\
+In basso a sinistra è presente il pulsante \textbf{Back to Zone} per tornare alla zone page.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/addShelfPage.png}
+    \caption{Add Shelf Page}
+    \label{fig:addShelfPages}
+\end{figure}
 
+Cliccando sul pulsante \textbf{Add new} nella corridor page si apre un form, che consente
+all'Admin di poter aggiungere un nuovo scaffale al corridoio.\\
+In basso, sono presenti i pulsanti \textbf{Save} per salvare lo scaffale e \textbf{Cancel} per annullare l'operazione
+e tornare alla corridor page.
+Qualora non venissero inseriti correttamente tutti i dati verrà mostrato un messaggio di errore.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/editShelfPage.png}
+    \caption{Edit Shelf Page}
+    \label{fig:editShelfPage}
+\end{figure}
 
+Cliccando sull'icona \textbf{edit} di un determinato scaffale, nella corridor page, si apre un form
+che permette all'Admin di poter modificare il nome di quest'ultimo.\\
+Cliccando sul bottone \textbf{Save} vengono salvate le modifiche, mentre cliccando sul bottone \textbf{Cancel} si viene
+riportati alla corridor page.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/viewShelf.png}
+    \caption{Shelf Page}
+    \label{fig:shelfPage}
+\end{figure}
+
+Cliccando sull'icona \textbf{view} di uno specifico scaffale nella pagina del corridoio, l'admin viene reindirizzato alla pagina di visualizzazione dei dati dello scaffale selezionato e dei prodotti presenti in esso.\\
+Questa pagina mostra una lista dei prodotti in formato tabellare.\\
+Nella colonna di destra sono presenti icone che permettono di modificare o eliminare i dati di ciascun prodotto.\\
+In alto a destra è disponibile un pulsante \textbf{Add Product} per aggiungere un nuovo prodotto allo scaffale.\\
+In basso a sinistra è presente il pulsante \textbf{Back to Corridor} per tornare alla pagina del corridoio.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/addProductInShelf.png}
+    \caption{Add Product In Shelf Page}
+    \label{fig:addProductInShelfPage}
+\end{figure}
+
+Cliccando sul pulsante \textbf{Add Product} nella shelf page si apre un form, che consente
+all'Admin di poter aggiungere un nuovo prodotto allo scaffale, specificando il suo codice e la quantità.\\
+In basso, sono presenti i pulsanti \textbf{Save} per salvare il prodotto e \textbf{Cancel} per annullare l'operazione
+e tornare alla shelf page.
+Qualora non venissero inseriti correttamente tutti i dati verrà mostrato un messaggio di errore.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/editProductInShelf.png}
+    \caption{Edit Product In Shelf Page}
+    \label{fig:editProductInShelfPage}
+\end{figure}
+
+Cliccando sull'icona \textbf{edit} di un determinato prodotto, nella shelf page, si apre un form
+che permette all'Admin di poter modificare la quantità di quest'ultimo.\\
+Cliccando sul bottone \textbf{Save} vengono salvate le modifiche, mentre cliccando sul bottone \textbf{Cancel} si viene
+riportati alla shelf page.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/usersPage.png}
+    \caption{Users Page}
+    \label{fig:viewUsersPage}
+\end{figure}
+
+Cliccando sulla voce \textbf{Users} nella sidebar, l'utente viene reindirizzato alla pagina di gestione degli utenti.\\
+Questa pagina offre una visualizzazione tabellare di tutti gli utenti presenti, sia admin che operational.\\
+Nella colonna di destra, sono presenti delle icone che consento di modificare o eliminare
+i dati di un singolo utente.\\
+In alto a destra è presente un pulsante \textbf{Add Users} che consente di aggiungere un nuovo utente al sistema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/addUserPage.png}
+    \caption{Add User Page}
+    \label{fig:addUserPages}
+\end{figure}
+
+Cliccando sul pulsante \textbf{Add User} nella users page si apre un form, che consente
+all'Admin di poter creare un nuovo utente specificando tutti i dati richiesti.\\
+Infine, in basso, sono presenti i pulsanti \textbf{Save} per salvare l'utente e \textbf{Cancel} per annullare l'operazione
+e tornare alla user page.
+Qualora non venissero inseriti correttamente tutti i dati verrà mostrato un messaggio di errore.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/editUserPage.png}
+    \caption{Edit User Page}
+    \label{fig:editUserPage}
+\end{figure}
+
+Cliccando sull'icona \textbf{edit} di un determinato utente, nella user page si apre un form simile a quello che
+consente di aggiungere un nuovo utente, che permette all'Admin di poter modificarne i dettagli.\\
+Cliccando sul bottone \textbf{Save} vengono salvate le modifiche, mentre cliccando sul bottone \textbf{Cancel} si viene
+riportati alla user page.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/settingsPage.png}
+    \caption{Settings Page}
+    \label{fig:settingsPage}
+\end{figure}
+
+Questa è la pagina delle impostazioni, accessibile sia per l'admin che per l'utente Operational.\\
+La pagina permette di configurare le impostazioni generali, come il tema, e le impostazioni dell'account, come l'username e la password.\\
+In alto a destra è presente un pulsante \textbf{Save} per salvare le modifiche effettuate.
+
+\subsubsection{Operational}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/homePageOp.png}
+        \caption{Home Page Operational}
+    \label{fig:homePageOp}
+\end{figure}
+
+All'accesso, l'utente Operational viene accolto con un messaggio di benvenuto personalizzato e una panoramica dei task assegnati.\\
+La pagina mostra un elenco tabellare dei task, non completati, con il rispettivo codice, data, tipo e stato.\\
+Sulla destra, è presente un'icona che indica il numero totale di task assegnati all'utente che ancora deve completare.
+\\\\
+La \textbf{Product Page} e \textbf{Storage page} presentano una struttura analoga a quella già descritta per l'Admin,
+con la differenza che l'utente Operational ha solo permessi di visualizzazione.
+
+\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/userTaskPage.png}
+    \caption{User Task Page}
+    \label{fig:userTaskPage}
+\end{figure}
+La \textbf{Task Page} per l'utente Operational ha una struttura simile a quella descritta per l'Admin, ma con alcune
+differenze. L'utente Operational non ha la possibilità di eliminare o modificare i dati; può invece consultare i
+prodotti da spostare e segnalare il completamento del task cliccando sull'icona \textbf{Done}.
