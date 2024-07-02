@@ -1,6 +1,16 @@
 \section{Tecnologie}
 
+In questa sezione vengono descritte le tecnologie utilizzate nello sviluppo dell'applicativo che non rientrano nello stack tecnologico di base, evidenziando il loro ruolo e il motivo della loro scelta.
+
 \subsection{Socket-IO}
+Socket.IO è una libreria JavaScript per applicazioni web che consente la comunicazione in tempo reale bidirezionale tra client web e server. È stata utilizzata per implementare la funzionalità di aggiornamento in tempo reale all'interno dell'applicativo, permettendo al backend di notificare il frontend di eventi specifici senza che quest'ultimo debba effettuare richieste periodiche al server.
+
+Nel contesto del nostro progetto, Socket.IO è stato impiegato per gestire eventi come "temperature-alert" e "lowStockAlert", consentendo di notificare gli utenti in tempo reale riguardo situazioni critiche come il superamento della soglia di temperatura impostata o l'esaurimento delle scorte di un prodotto. Questo è stato realizzato attraverso la configurazione di canali di comunicazione dedicati a ciascun evento, facilitando così la segregazione e la gestione delle diverse tipologie di notifiche.
+
+Per adattarsi alla nostra architettura basata su microservizi accessibile tramite un gateway, abbiamo implementato un meccanismo per cui gli eventi generati dai microservizi vengono inizialmente inviati al gateway. Successivamente, il gateway si occupa di trasmettere questi eventi al frontend utilizzando Socket.IO. Questo approccio ci ha permesso di mantenere una separazione chiara tra i microservizi e il frontend, oltre a centralizzare la gestione degli eventi in tempo reale, facilitando la scalabilità e la manutenzione del sistema.
+
+La scelta di Socket.IO è stata motivata dalla sua facilità di integrazione con stack tecnologici basati su JavaScript, dalla sua efficienza nella gestione di connessioni in tempo reale e dalla sua capacità di operare attraverso diversi trasporti, garantendo così una comunicazione fluida anche in presenza di firewall o proxy.
+
 \subsection{Chart.js}
 \subsection{Jest}
 \subsection{Husky}
