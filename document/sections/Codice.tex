@@ -1,6 +1,21 @@
 \section{Codice}
 \subsection{Applicazione del pattern MVC nella realizzazione dei component}
+Il componente Task è stato progettato seguendo il pattern MVC (Model-View-Controller).
+\\Di seguito vengono dettagliati i componenti principali che costituiscono questo pattern per il Task:
+\subsubsection{Task Model}
+Il \textbf{Task Model} gestisce la struttura dei dati relativi ai task.\\ Questo modello è responsabile della gestione dei dati senza occuparsi della presentazione o dell’interazione con l’utente.
 
+\subsubsection{Task View}
+Il \textbf{Task View} è un componente React che gestisce la presentazione dei dati relativi ai task e l'interazione con l'utente.\\
+Utilizza gli hook di React per la gestione dello stato interno e degli effetti collaterali, come il caricamento dei task dal backend e la gestione delle azioni dell'utente.
+\subsubsection{Task Controller}
+Il \textbf{Task Controller} gestisce la logica di business relativa alle operazioni sui task, come il recupero, l'aggiunta,
+la modifica e l'eliminazione. Comunica con il backend attraverso specifici service.
+
+\subsubsection{Task Service}
+Il \textbf{TaskService} è responsabile della comunicazione con il backend per eseguire operazioni sui task,
+come il recupero, l'aggiunta, la modifica e l'eliminazione.\\ Utilizza fetch per fare richieste HTTP al server,
+gestendo sia le intestazioni di autenticazione sia il trattamento delle risposte.
 
 \subsection{Aggiornamento real-time con Socket-IO}
 Al fine di disaccoppiare il backend dal frontend, è stato utilizzato un design pattern Observer, in modo tale che il backend possa notificare il frontend di eventuali eventi, senza che il frontend debba effettuare richieste HTTP periodiche per verificare lo stato dell'applicazione.
