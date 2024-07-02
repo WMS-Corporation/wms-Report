@@ -370,3 +370,295 @@ blocks vengono utilizzati nei microservizi:
 \subsubsection{Frontend}
 
 \subsection{Storyboard}
+
+L'applicazione finale si è evoluta significativamente rispetto ai mockup iniziali realizzati in fase di progettazione.\\
+Le modifiche apportate sono state guidate dai feedback e dalle interazioni avute con gli utenti.\\
+Questo processo iterativo ha permesso di affinare e migliorare l'applicazione, garantendo che le esigenze e le
+aspettative degli utenti fossero soddisfatte in maniera ottimale.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/login.png}
+    \caption{Login Page}
+    \label{fig:loginPage}
+\end{figure}
+
+La pagina iniziale dell’applicazione si presenta con questa schermata, che consente all’utente, sia esso operativo che
+amministrativo, di accedere al sistema inserendo le proprie credenziali.\\
+Nel caso in cui l’utente inserisca credenziali non valide, verrà mostrato un messaggio di errore.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/register.png}
+    \caption{Register Page}
+    \label{fig:registerPage}
+\end{figure}
+
+Cliccando sul link \textbf{Register} nella pagina di login viene mostra un form per effettuare la registrazione al sistema.
+Una volta completata la registrazione si viene reindirizzati alla propria Home Page.
+
+\subsubsection{Admin}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/homePageAdmin.png}
+    \caption{Home Page Admin}
+    \label{fig:homePageAdmins}
+\end{figure}
+
+L'home dell Admin offre una panoramica delle principali attività e metriche del magazzino.
+In alto, vengono mostrate tre statistiche chiave: il numero di task e ordini non completati, e il numero di utenti
+Operational registrati.\\
+
+La sezione centrale include tre grafici:
+\begin{itemize}
+    \item \textbf{Task Overview}: un grafico a torta che mostra lo stato dei task.
+    \item \textbf{Order Overview}: un grafico a torta che rappresenta lo stato degli ordini.
+    \item \textbf{Zone Temperature Overview}: un grafico a barre che visualizza le temperature nelle diverse zone del magazzino.
+\end{itemize}
+
+Sulla destra è presente un pulsante \textbf{Generate Report} per generare report dettagliati.\\
+La sidebar, situata a sinistra, consente una navigazione rapida e intuitiva tra le varie sezioni dell'applicazione.\\
+L'header in alto contiene il logo dell'applicazione a sinistra, mentre a destra è presente l'icona per il logout.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/productPage.png}
+    \caption{Product Page}
+    \label{fig:productPages}
+\end{figure}
+
+Cliccando sulla voce \textbf{Products} nella sidebar, l'utente viene reindirizzato alla pagina di gestione dei prodotti.\\
+Questa pagina offre una visualizzazione tabellare dei prodotti presenti nel magazzino,
+mostrando le informazioni chiave per ogni prodotto.\\
+Nella colonna di sinistra, sono presenti delle icone che consento di modificare o eliminare il prodotto.\\
+In alto a destra è presente un pulsante \textbf{Add Product} che consente di aggiungere nuovi prodotti al sistema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/addProductPage.png}
+    \caption{Add Product Page}
+    \label{fig:addProductPages}
+\end{figure}
+
+Cliccando sul pulsante \textbf{Add new} nella product page si apre un form, che consente
+all'Admin di poter creare un nuovo prodotto.\\
+Cliccando sul bottone \textbf{Save} vengono salvati i dati del prodotto, mentre cliccando sul bottone \textbf{Cancel} si viene
+riportare alla product page.\\
+Qualora non venissero inseriti correttamente tutti i dati verrà mostrato un messaggio di errore.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/editProductPage.png}
+    \caption{Edit Product Page}
+    \label{fig:editProductPage}
+\end{figure}
+
+Cliccando sull'icona \textbf{edit} di un determinato prodotto, nella product page si apre un form, che consente
+all'Admin di poter modificare i dettagli del prodotto.\\
+Cliccando sul bottone \textbf{Save} vengono salvate le modifiche, mentre cliccando sul bottone \textbf{Cancel} si viene
+riportare alla product page.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/taskPage.png}
+    \caption{Tasks Page}
+    \label{fig:tasksPage}
+\end{figure}
+
+Cliccando sulla voce \textbf{Tasks} nella sidebar, l'utente viene reindirizzato alla pagina di gestione dei tasks.\\
+Questa pagina offre una visualizzazione tabellare dei task assegnati ai vari operatori,
+mostrando le informazioni chiave per ogni task.\\
+Nella colonna di destra, sono presenti delle icone che consento di modificare, eliminare oppure visualizzare meglio
+i dati di un singolo task.\\
+In alto a destra è presente un pulsante \textbf{Add Task} che consente di aggiungere un nuovo task al sistema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/addTaskPage.png}
+    \caption{Add Task Page}
+    \label{fig:addTaskPages}
+\end{figure}
+
+Cliccando sul pulsante \textbf{Add new} nella task page si apre un form, che consente
+all'Admin di poter creare un nuovo task.\\
+Sotto il form, è presente una sezione denominata \textbf{Products Details} che mostra i dettagli dei prodotti inclusi
+nel task in formato tabellare.\\Gli utenti possono aggiungere più prodotti al task utilizzando il pulsante \textbf{Add Product}.\\
+Infine, in basso, sono presenti i pulsanti \textbf{Save} per salvare il task e \textbf{Cancel} per annullare l'operazione
+e tornare nella task page.
+Qualora non venissero inseriti correttamente tutti i dati verrà mostrato un messaggio di errore.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/editTaskPage.png}
+    \caption{Edit Task Page}
+    \label{fig:editTaskPage}
+\end{figure}
+
+Cliccando sull'icona \textbf{edit} di un determinato task, nella task page si apre un form simile a quello che
+consente di aggiungere un nuovo task, che permette all'Admin di poter modificare i dettagli del task.\\
+Cliccando sul bottone \textbf{Save} vengono salvate le modifiche, mentre cliccando sul bottone \textbf{Cancel} si viene
+riportare alla product page.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/viewTask.png}
+    \caption{Task Page}
+    \label{fig:viewTasksPage}
+\end{figure}
+
+Cliccando sull'icona \textbf{view} di un determinato task, l’admin viene
+reindirizzato alla pagina di visualizzazione dei dettagli del task selezionato.\\
+Questa pagina offre una visualizzazione tabellare, mostrando informazioni chiave per ogni prodotto
+incluso nel task.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/orderPage.png}
+    \caption{Orders Page}
+    \label{fig:ordersPage}
+\end{figure}
+
+Cliccando sulla voce \textbf{Orders} nella sidebar, l'utente viene reindirizzato alla pagina di gestione degli ordini.\\
+Questa pagina offre una visualizzazione tabellare degli ordini effettuati,
+mostrando le informazioni chiave per ogni ordine.\\
+Nella colonna di destra, sono presenti delle icone che consento di modificare, eliminare oppure visualizzare meglio
+i dati di un singolo ordine.\\
+In alto a destra è presente un pulsante \textbf{Add Order} che consente di aggiungere un nuovo ordine al sistema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/addOrderPage.png}
+    \caption{Add Order Page}
+    \label{fig:addOrderPages}
+\end{figure}
+
+Cliccando sul pulsante \textbf{Add new} nella order page si apre un form, che consente
+all'Admin di poter creare un nuovo ordine.\\
+Sotto il form, è presente una sezione denominata \textbf{Products Details} che mostra i dettagli dei prodotti inclusi
+nell'ordine in formato tabellare.\\
+L'admin può  aggiungere più prodotti all'ordine utilizzando il pulsante \textbf{Add Product}.\\
+Infine, in basso, sono presenti i pulsanti \textbf{Save} per salvare l'ordine e \textbf{Cancel} per annullare l'operazione
+e tornare nella order page.
+Qualora non venissero inseriti correttamente tutti i dati verrà mostrato un messaggio di errore.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/editOrderPage.png}
+    \caption{Edit Order Page}
+    \label{fig:editOrderPage}
+\end{figure}
+
+Cliccando sull'icona \textbf{edit} di un determinato ordine, nella order page si apre un form simile a quello che
+consente di aggiungere un nuovo ordine, che permette all'Admin di poter modificare i dettagli dell' ordine.\\
+Cliccando sul bottone \textbf{Save} vengono salvate le modifiche, mentre cliccando sul bottone \textbf{Cancel} si viene
+riportati alla order page.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/viewOrder.png}
+    \caption{Order Page}
+    \label{fig:viewOrdersPage}
+\end{figure}
+
+Cliccando sull'icona \textbf{view} di un determinato ordine, l’admin viene
+reindirizzato alla pagina di visualizzazione dei dettagli dell'ordine selezionato.\\
+Questa pagina offre una visualizzazione tabellare, mostrando informazioni chiave per ogni prodotto
+incluso nell'ordine.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/storagePage.png}
+    \caption{Storages Page}
+    \label{fig:storagesPage}
+\end{figure}
+
+Cliccando sulla voce \textbf{Logistic} nella sidebar, l'utente viene reindirizzato alla pagina di gestione del magazzino.\\
+Questa pagina offre una visualizzazione tabellare di tutti gli storage presenti.\\
+Nella colonna di destra, sono presenti delle icone che consento di eliminare oppure oppure visualizzare in dettaglio
+le zone di un singolo magazzino.\\
+In alto a destra è presente un pulsante \textbf{Add Storage} che consente di aggiungere un nuovo storage al sistema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/viewStorage.png}
+    \caption{Storage Page}
+    \label{fig:storagePage}
+\end{figure}
+
+Cliccando sull'icona \textbf{view} di un determinato storage, l’admin viene
+reindirizzato alla pagina di visualizzazione delle zone di cui è composto lo storage selezionato.\\
+Inoltre la pagina mostra una lista delle zone in un formato tabellare. \\
+In particolare, nella colonna di destra, sono presenti delle icone che consentono di modificare, eliminare oppure
+visualizzare in dettaglio i dati di una singola zona, inclusi i corridoi di cui è composta.\\
+In alto a destra è presente un pulsante \textbf{Add Zone} che consente di aggiungere nuove zone al magazzino.\\
+In basso a sinistra è presente un pulsante \textbf{BACK} che consente di tornare alla storages page.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/addZone.png}
+    \caption{Add Zone Page}
+    \label{fig:addZonePages}
+\end{figure}
+
+Cliccando sul pulsante \textbf{Add new} nella storage page si apre un form, che consente
+all'Admin di poter aggiungere una nuova zona allo storage.\\
+In basso, sono presenti i pulsanti \textbf{Save} per salvare la zona e \textbf{Cancel} per annullare l'operazione
+e tornare alla storage page.
+Qualora non venissero inseriti correttamente tutti i dati verrà mostrato un messaggio di errore.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/editZonePage.png}
+    \caption{Edit Zone Page}
+    \label{fig:editZonePage}
+\end{figure}
+
+Cliccando sull'icona \textbf{edit} di una determinata zona, nella storage page, si apre un form
+che permette all'Admin di poter modificare i dettagli di quest'ultima.\\
+Cliccando sul bottone \textbf{Save} vengono salvate le modifiche, mentre cliccando sul bottone \textbf{Cancel} si viene
+riportati alla storage page.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/viewZone.png}
+    \caption{Zone Page}
+    \label{fig:zonePage}
+\end{figure}
+
+Cliccando sull'icona \textbf{view} di una determinata zona nella pagina di gestione degli storage, l’admin viene reindirizzato alla pagina di visualizzazione dei dati della zona selezionata e dei corridoi che la compongono.\\
+Questa pagina presenta una lista dei corridoi in formato tabellare.\\
+Nella colonna di destra sono presenti icone che permettono di modificare, eliminare o visualizzare in dettaglio i dati di ciascun corridoio, inclusi gli scaffali presenti.\\
+In alto a destra è disponibile un pulsante \textbf{Add Corridor} per aggiungere un nuovo corridoio alla zona.\\
+In basso a sinistra è presente il pulsante \textbf{Back to Storage} per tornare alla pagina di gestione degli storage.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/addCorridorPage.png}
+    \caption{Add Corridor Page}
+    \label{fig:addCorridorPages}
+\end{figure}
+
+Cliccando sul pulsante \textbf{Add new} nella zone page si apre un form, che consente
+all'Admin di poter aggiungere un nuovo corridoio alla zona.\\
+In basso, sono presenti i pulsanti \textbf{Save} per salvare il corridoio e \textbf{Cancel} per annullare l'operazione
+e tornare alla zone page.
+Qualora non venissero inseriti correttamente tutti i dati verrà mostrato un messaggio di errore.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/Storyboard/editCorridorPage.png}
+    \caption{Edit Corridor Page}
+    \label{fig:editCorridorPage}
+\end{figure}
+
+Cliccando sull'icona \textbf{edit} di un determinato corridoio, nella zone page, si apre un form
+che permette all'Admin di poter modificare i dettagli di quest'ultimo.\\
+Cliccando sul bottone \textbf{Save} vengono salvate le modifiche, mentre cliccando sul bottone \textbf{Cancel} si viene
+riportati alla zone page.
+
+
+
+
+
+
