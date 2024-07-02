@@ -4,18 +4,147 @@ Il componente Task è stato progettato seguendo il pattern MVC (Model-View-Contr
 \\Di seguito vengono dettagliati i componenti principali che costituiscono questo pattern per il Task:
 \subsubsection{Task Model}
 Il \textbf{Task Model} gestisce la struttura dei dati relativi ai task.\\ Questo modello è responsabile della gestione dei dati senza occuparsi della presentazione o dell’interazione con l’utente.
+\begin{figure}[H]
+    \centering
+    \begin{minted}{javascript}
+        class TaskModel {
+            constructor(codOperator, date, type, status, productList, codTask) {
+            this._codOperator = codOperator;
+            this._date = date ? new Date(date) : new Date();
+            this._type = type;
+            this._status = status;
+            this._productList = productList ? productList.map(product => new ProductTaskModel(product._codProduct, product._from, product._to, product._quantity)) : [];
+            this._codTask = codTask;
+            }
+        }
+        
+        class ProductTaskModel {
+            constructor(codProduct, from, to, quantity) {
+            this._codProduct = codProduct;
+            this._from = from;
+            this._to = to;
+            this._quantity = quantity;
+            }
+        }
+        
+        export { TaskModel, ProductTaskModel };
+\end{minted}
+\captionof{listing}{ Modello Task e ProductTask }
+\end{figure}
+
 
 \subsubsection{Task View}
 Il \textbf{Task View} è un componente React che gestisce la presentazione dei dati relativi ai task e l'interazione con l'utente.\\
 Utilizza gli hook di React per la gestione dello stato interno e degli effetti collaterali, come il caricamento dei task dal backend e la gestione delle azioni dell'utente.
+\begin{figure}[H]
+    \centering
+    \begin{minted}{javascript}
+        const Task = () => {
+        const [tasks, setTasks] = useState([]);
+        const [loading, setLoading] = useState(true);
+        const [error, setError] = useState(null);
+        const { user } = useAuth() || {};
+
+        const loadTasks = async () => {
+            try {
+            const result = await getTasks();
+            setTasks(result);
+            } catch (error) {
+            setError(error);
+            } finally {
+            setLoading(false);
+            }
+        };
+
+        useEffect(() => {
+            loadTasks();
+        }, []);
+        
+        const handleView = (task) => {
+            setViewProductDetailTask(task)
+        }
+
+        // all other handles
+
+        if (loading) {
+            return <div>Loading...</div>;
+        }
+
+        if (addingTask) {
+            return <TaskAddForm task={new TaskModel()} onSave={handleSave} onCancel={handleCancel} error={error}/>;
+        } else if (editingTask) {
+            return <TaskAddForm task={editingTask} onSave={handleSave} onCancel={handleCancel} error={error}/>;
+        } else {
+            return <TaskList tasks={tasks} onAdd={handleAdd} onEdit={handleEdit} onSave={handleSave} onView={handleView} viewProductDetailTask={viewProductDetailTask} onError={setError}/>;
+        }
+        };
+
+        export default Task;
+\end{minted}
+\captionof{listing}{ Component }
+\end{figure}
+
+
 \subsubsection{Task Controller}
 Il \textbf{Task Controller} gestisce la logica di business relativa alle operazioni sui task, come il recupero, l'aggiunta,
 la modifica e l'eliminazione. Comunica con il backend attraverso specifici service.
+\begin{figure}[H]
+    \centering
+    \begin{minted}{javascript}
+        import { fetchTasks, updateTask, removeTask, addTask as addTaskToService } from '../services/taskService';
+
+        export const getTasks = async () => {
+        return await fetchTasks();
+        };
+
+        export const saveTask = async (codTask, newData) => {
+        const dataToSend = { ...newData };
+        delete dataToSend._codTask;
+        return await updateTask(codTask, dataToSend);
+        };
+
+        export const addTask = async (task) => {
+        const dataToSend = { ...task };
+        delete dataToSend._codTask;
+        return await addTaskToService(dataToSend);
+        };
+
+        export const deleteTask = async (task) => {
+        return await removeTask(task._codTask);
+        };
+\end{minted}
+\captionof{listing}{ Controller }
+\end{figure}
 
 \subsubsection{Task Service}
 Il \textbf{TaskService} è responsabile della comunicazione con il backend per eseguire operazioni sui task,
 come il recupero, l'aggiunta, la modifica e l'eliminazione.\\ Utilizza fetch per fare richieste HTTP al server,
 gestendo sia le intestazioni di autenticazione sia il trattamento delle risposte.
+\begin{figure}[H]
+    \centering
+    \begin{minted}{javascript}
+        import { TaskModel } from '../models/taskModel';
+        import { getAuthHeaders } from './authService';
+        import { API_URL } from '../config';
+
+        export const fetchTasks = async () => {
+        try {
+            const response = await fetch(`${API_URL}/tasks/all`, {
+            method: 'GET',
+            headers: getAuthHeaders(),
+            });
+            if (!response.ok) throw new Error('Network response was not ok');
+            const data = await response.json();
+            return data.map(item => new TaskModel(item._codOperator, item._date, item._type, item._status, item._productList, item._codTask));
+        } catch (error) {
+            console.error('Error fetching tasks:', error);
+            throw error;
+        }
+        };
+
+\end{minted}
+\captionof{listing}{ Servizio }
+\end{figure}
 
 \subsection{Aggiornamento real-time con Socket-IO}
 Al fine di disaccoppiare il backend dal frontend, è stato utilizzato un design pattern Observer, in modo tale che il backend possa notificare il frontend di eventuali eventi, senza che il frontend debba effettuare richieste HTTP periodiche per verificare lo stato dell'applicazione.
