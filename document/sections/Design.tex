@@ -85,16 +85,288 @@ Di seguito vengono riportati diversi personas, rappresentazioni ipotetiche di ut
 
 Questi profili aiutano a mantenere il focus sulle esigenze degli utenti durante tutte le fasi di sviluppo e progettazione dell'applicazione. La metodologia \textbf{UCD (User Centered Design)} e il principio \textbf{KISS (Keep It Simple, Stupid)} sono stati adottati per garantire che l'applicazione sia facile da usare e risponda efficacemente alle esigenze degli utenti, migliorando l'efficienza operativa e la soddisfazione generale.
 
-
+\newpage
 \subsection{Mockup iniziali}
 
-\subsection{Design architetturale}
+Durante lo sviluppo dell'applicazione, particolare attenzione è stata rivolta all'interfaccia utente,
+cercando di mantenere uno stile grafico semplice e intuitivo.\\ L'obiettivo principale era permettere agli utenti di
+navigare tra le diverse pagine e informazioni in modo rapido e intuitivo.
 
+Nella fase iniziale di progettazione, sono stati creati dei mockup per ottenere una versione preliminare dell'aspetto
+grafico dell'applicazione.\\ Questi mockup sono stati utilizzati per visualizzare un insieme di funzionalità che si
+ritenevano necessarie per l'applicazione.\\ Grazie a queste interfacce preliminari, è stato possibile raccogliere vari
+feedback dagli utenti, permettendo di apportare miglioramenti e ottimizzazioni prima della fase di sviluppo finale.\\
+\\In seguito i vari mockup realizzati in fase di progettazione:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{document/sections/img/login.png}
+    \caption{Login Page}
+    \label{fig:login}
+\end{figure}
+
+L'applicazione si apre con una schermata di login, dove gli utenti possono accedere al sistema utilizzando le loro
+credenziali istituzionali.
+\newpage
+\subsubsection{Admin}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{document/sections/img/homePageAdmin.png}
+    \caption{Home Page Admin}
+    \label{fig:homePageAdmin}
+\end{figure}
+
+Dopo aver completato con successo la fase di autenticazione, l'utente viene reindirizzato alla propria homepage.\\
+Questa pagina offre una panoramica intuitiva delle metriche principali per la gestione del magazzino.\\
+La homepage è divisa in sezioni chiave.\\ Nella parte superiore, ci sono riquadri colorati che mostrano in tempo reale:
+il numero totale di prodotti, compiti, ordini e la temperatura della zona refrigerata.\\
+La sidebar a sinistra permette l'accesso rapido alle varie funzionalità dell'applicazione.\\
+Ogni sezione è accessibile tramite icone e descrizioni chiare, facilitando la navigazione.\\
+Al centro della pagina, sono visualizzati due grafici a torta.\\ Il primo grafico mostra lo stato attuale dei prodotti,
+suddiviso in in stock, out of stock e in transito.\\ Il secondo grafico visualizza lo stato degli ordini, distinguendo
+tra pendenti, completati e cancellati.\\
+L'header della pagina contiene il logo dell'applicazione, posizionato in alto a sinistra.\\
+Questo layout garantisce una visione d'insieme delle operazioni del magazzino e un rapido accesso alle funzionalità
+necessarie.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{document/sections/img/productPage.png}
+    \caption{Product Page}
+    \label{fig:productPage}
+\end{figure}
+
+Cliccando sull'icona \textbf{Products} nella sidebar, l'utente viene reindirizzato alla pagina di gestione dei prodotti.\\
+Questa pagina offre una visualizzazione tabellare dei prodotti presenti nel magazzino.\\
+Nella parte superiore è presente un pulsante \textbf{Add new} che consente di aggiungere nuovi prodotti.
+
+La tabella visualizza informazioni chiave per ogni prodotto e consente di modificarne o eliminarne i dettagli,
+cliccando sulle apposite icone nell'ultima colonna a destra della tabella.\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{document/sections/img/AddProduct.png}
+    \caption{Add Product Page}
+    \label{fig:addProductPage}
+\end{figure}
+Cliccando sul pulsante \textbf{Add new} nella pagina di gestione dei prodotti,
+l'utente viene reindirizzato a questa schermata.
+La pagina presenta un modulo di inserimento dati strutturato in modo chiaro e intuitivo,
+con tutti i campi necessari per la creazione di un prodotto.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{document/sections/img/taskPage.png}
+    \caption{Task Page}
+    \label{fig:taskPage}
+\end{figure}
+
+Cliccando sull'icona \textbf{Tasks} nella sidebar, l'utente viene reindirizzato alla pagina di gestione dei task.
+Questa pagina offre una visualizzazione tabellare dei task presenti nel magazzino.\\
+Nella parte superiore è presente un pulsante \textbf{Add new} che consente di aggiungere nuovi task.\\
+La tabella visualizza informazioni chiave per ogni task e consente di modificarne o eliminarne i dettagli,
+cliccando sulle apposite icone nell'ultima colonna a destra della tabella.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{document/sections/img/addTask.png}
+    \caption{Add Task Page}
+    \label{fig:addTaskPage}
+\end{figure}
+
+Cliccando sul pulsante \textbf{Add new} nella pagina di gestione dei task,
+l'utente viene diretto a questa schermata.
+La pagina mostra un modulo di inserimento dati organizzato in modo chiaro e intuitivo,
+contenente tutti i campi necessari per la creazione di un nuovo task.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{document/sections/img/orderPage.png}
+    \caption{Order Page}
+    \label{fig:orderPage}
+\end{figure}
+
+Cliccando sull'icona \textbf{Orders} nella sidebar, l'utente viene reindirizzato alla pagina di gestione degli ordini.\\
+Questa pagina offre una visualizzazione tabellare degli ordini presenti nel magazzino.\\
+Nella parte superiore, è presente un pulsante \textbf{Add new} che consente di aggiungere nuovi ordini.
+La tabella visualizza informazioni chiave per ogni ordine e consente di elinarne o visualizzarne meglio i dettagli,
+cliccando sulle apposite icone nell'ultima colonna a destra della tabella.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{document/sections/img/AddOrder.png}
+    \caption{Add Order Page}
+    \label{fig:addOrderPage}
+\end{figure}
+Cliccando sul pulsante \textbf{Add new} nella pagina di gestione degli ordini,
+l'utente viene diretto a questa schermata.
+La pagina mostra un form nel quale viene richiesto all'utente di inserire tutti i dati necessari,
+per la creazione di un nuovo ordine.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{document/sections/img/OrderView.png}
+    \caption{Order View Page}
+    \label{fig:orderViewPage}
+\end{figure}
+Cliccando sull'icona \textbf{View} accanto a un ordine nella pagina di gestione degli ordini,
+l'utente viene reindirizzato alla pagina di visualizzazione dei dettagli dell'ordine selezionato.\\
+Questa pagina offre una visualizzazione tabellare, mostrando informazioni chiave per ogni prodotto
+incluso nell'ordine.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{document/sections/img/UserPage.png}
+    \caption{User Page}
+    \label{fig:userPage}
+\end{figure}
+Cliccando sull'icona \textbf{Users} nella sidebar, l'utente viene reindirizzato alla pagina di gestione degli
+utenti. Questa pagina offre una visualizzazione tabellare degli utenti presenti nel sistema.\\
+Nella parte superiore è presente un pulsante \textbf{Add User} che consente di aggiungere nuovi utenti.\\
+La tabella visualizza informazioni chiave per ogni utente e consente di modificarne o eliminarne i dettagli,
+cliccando sulle apposite icone.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{document/sections/img/AddUser.png}
+    \caption{Add User Page}
+    \label{fig:addUserPage}
+\end{figure}
+Cliccando sul pulsante \textbf{Add new} nella pagina di gestione degli utenti,
+l'utente viene diretto a questa schermata.
+La pagina mostra un form nel quale viene richiesto all'admin di inserire tutti i dati necessari,
+per la creazione di un nuovo utente.\\
+\subsubsection{Operational}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{document/sections/img/Dashboard.png}
+    \caption{Home Page Operational}
+    \label{fig:homePageOperational}
+\end{figure}
+Dopo l'autenticazione, l'utente operativo viene reindirizzato alla propria home page.
+L'Home Page è strutturata in diverse sezioni chiave:
+\begin{itemize}
+    \item \textbf{Panoramica delle Attività}: Una tabella centrale che mostra i task attuali dell'utente.
+    \item \textbf{Navigazione Intuitiva}: La sidebar a sinistra offre accesso rapido alle principali funzionalità.
+    \item \textbf{Azioni Rapide}: Accanto a ciascun task nella tabella, è presente un'icona \textbf{View} che permette di visualizzare i dettagli del task specifico.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{document/sections/img/taskPageOp.png}
+    \caption{Operational's Task View Page}
+    \label{fig:taskPageOp}
+\end{figure}
+Cliccando sull'icona \textbf{View} accanto ad un task, l'utente operativo viene reindirizzato alla pagina di
+visualizzazione dei dettagli del task selezionato.\\
+Questa pagina fornisce una visualizzazione tabellare, mostrando tutte le informazioni chiave per ogni prodotto
+coinvolto nel task.\\
+Nella parte inferiore della pagina, è presente un pulsante \textbf{COMPLETED} che consente all'utente di
+segnare il task come completato.
+
+
+\subsection{Design architetturale}
+Per quanto riguarda l'architettura del sistema, essa è stata progettata a partire dallo stack MERN che
+comprende le seguenti tecnologie:
+\begin{itemize}
+    \item MongoDB
+    \item Express
+    \item React
+    \item Node.js
+\end{itemize}
 \subsubsection{Architettura generale}
 
+L'architettura si compone di tre parti principali: il frontend realizzato con React, il backend
+realizzato con Node.js e Express, e infine la parte di database per memorizzare i dati dell'applicazione
+realizzata con MongoDB.\\ Internamente sono state utilizzate ulteriori tecnologie come Socket.IO
+per implementare la comunicazione e l'interoperabilità tra le componenti principali.
+
 \subsubsection{Backend e Database}
+Per realizzare il sistema di backend, si è deciso di adottare un’architettura a microservizi. Sono stati individuati sei microservizi principali:
 
+\begin{itemize}
+    \item \textbf{Gateway}: si occupa di smistare le comunicazioni ai diversi microservizi.
+    \item \textbf{Logistic}: si occupa di gestire le operazioni logistiche e la movimentazione delle risorse all'interno del magazzino.
+    \item \textbf{Order}: si occupa del processo di gestione degli ordini, inclusa la creazione, l'elaborazione e l'evasione degli ordini.
+    \item \textbf{Product}: si occupa della gestione dell'anagrafica dei prodotti.
+    \item \textbf{Task}: si occupa di gestire le attività o i compiti assegnati agli utenti, garantendo il coordinamento e il monitoraggio delle attività in corso.
+    \item \textbf{User}: si occupa di gestire l'autenticazione e la registrazione utenti.
+\end{itemize}
+
+Si osserva inoltre che:
+\begin{itemize}
+    \item Ogni microservizio utilizza lo stesso database, suddiviso in sezioni dedicate a ciascun servizio.
+    \item Esiste un gateway responsabile di interconnettere l'applicazione con tutti i servizi, garantendo che tutte le comunicazioni, sia in arrivo che in partenza dal client, transitino attraverso di esso.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/architectureServer.png}
+    \caption{Architettura del sistema di backend}
+    \label{fig:architectureServer}
+\end{figure}
+Le interazioni nel sistema coinvolgono principalmente il Client e i vari microservizi, con il Gateway
+che funge da intermediario.\\Quando il Client invia richieste al backend, il Gateway può indirizzare la
+comunicazione verso uno dei microservizi per ottenere informazioni specifiche.\\ Questo approccio assicura
+che tutte le interazioni tra il Client e i microservizi avvengano attraverso il Gateway, garantendo una
+gestione centralizzata e sicura delle richieste e delle risposte nel sistema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/serviceInteractions.png}
+    \caption{Interazione tra il Client e i Microservizi}
+    \label{fig:serviceInteractions}
+\end{figure}
+
+Di seguito viene mostrato il comportamento del server nel caso in cui un membro del personale amministrativo
+effettui il login.\\ Nell’esempio in questione i servizi coinvolti sono:
+
+\begin{itemize}
+    \item \textbf{Product}: si occupa dell'inserimento, aggiornamento, rimozione e visualizzazione dei prodotti all'interno del magazzino.
+    \item \textbf{Order}: si occupa dell'inserimento, aggiornamento e monitoraggio degli ordini effettuati.
+    \item \textbf{Task}: si occupa dell'assegnazione e monitoraggio dei task attribuiti agli operatori di magazzino.
+    \item \textbf{Logistic}: si occupa della gestione della logistica del magazzino, in particolare monitora la posizione dei prodotti all'interno del magazzino.
+    \item \textbf{Users}: si occupa di gestire autenticazione e registrazione di ogni utente.
+    \item \textbf{Gateway}: si occupa di smistare le comunicazioni ai diversi microservizi.
+\end{itemize}
+
+Quando un utente vuole accedere al sistema, inserirà le proprie credenziali tramite il Client, il quale
+le invierà al Gateway.\\ Quest'ultimo, a sua volta, inoltrerà le credenziali al microservizio \textbf{Users}.\\
+Il microservizio \textbf{Users} restituirà al Gateway le informazioni di avvenuto o negato login, il quale
+le inoltrerà al Client. \\In una situazione analoga, quando l'utente desidera accedere a specifiche informazioni,
+il Client invia una richiesta al Gateway, il quale la inoltra al relativo microservizio.\\Ad esempio, consideriamo
+il flusso per recuperare le informazioni sui task:
+
+Dopo aver effettuato l'accesso, il Client invierà una richiesta al microservizio \textbf{Task} tramite
+il Gateway.\\ Questo microservizio si occuperà quindi di restituire tutte le informazioni relative ai task
+assegnati al personale operativo.\\ In seguito, verrà inviata un'altra richiesta al
+microservizio \textbf{Product} per ottenere ulteriori dettagli sui prodotti inclusi nel task operativo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{document/sections/img/sequenceDiagram.png}
+    \caption{Diagramma di Sequenza delle Interazioni}
+    \label{fig:sequenceDiagram}
+\end{figure}
+Il design architetturale del backend `e stato dunque organizzato adottando il \textbf{Domain-Driven Design (DDD)}.
+Questa è una metodologia di progettazione del software che si concentra sulla comprensione e sulla modellazione
+del dominio di business all'interno del quale opera un'applicazione.\\ Nell'ambito dei microservizi,
+l'adozione del DDD è particolarmente vantaggiosa in quanto consente di suddividere il complesso dominio
+aziendale in sottodomini più gestibili, ciascuno dei quali rappresenta un microservizio.\\ Questo aiuta a
+mantenere la chiarezza e la coerenza all'interno di ciascun servizio, facilitando la comprensione e la
+manutenzione del codice.\\
+I building blocks del DDD forniscono una struttura organizzativa per ciascun microservizio,
+definendo ruoli e responsabilità chiare per ciascun componente.\\ Ecco una breve panoramica di come i building
+blocks vengono utilizzati nei microservizi:
+
+\begin{itemize}
+    \item \textbf{Entità (Entities)}: rappresentano gli oggetti principali del dominio.
+    \item \textbf{Factory}: sono responsabili della creazione di nuove istanze di oggetti complessi all'interno del dominio.
+    \item \textbf{Repository}: fungono da interfacce tra database e il microservizio per l'accesso ai dati. Gestiscono le operazioni di persistenza dei dati e forniscono metodi per recuperare e manipolare gli oggetti del dominio.
+    \item \textbf{Service}: contengono la logica di business e coordinano le operazioni cruciali all'interno di un dominio specifico. Si occupano di gestire operazioni complesse che coinvolgono una o più entità, definite all'interno del microservizio stesso.
+\end{itemize}
 \subsubsection{Frontend}
-
 
 \subsection{Storyboard}
