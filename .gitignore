@@ -33,7 +33,7 @@
 *.pyg*
 *.run.xml
 *.snm
-*.synctex.gz
+*.synctex*
 *.tex.backup
 *.tex~
 *.thm
