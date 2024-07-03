@@ -1,7 +1,7 @@
 \section{Requisiti}
 
-In questo capitolo, esploreremo i requisiti necessari per garantire il successo del progetto.\\
-Le varie sezioni di seguito delineeranno in dettaglio le diverse tipologie di requisiti.
+In questo capitolo esploreremo i requisiti necessari per garantire il successo del progetto.\\
+Le varie sezioni di seguito delineranno in dettaglio le diverse tipologie di requisiti.
 
 \begin{itemize}
     \item \textbf{Requisiti di Business}: questi requisiti delineano le caratteristiche chiave che il sistema deve possedere per essere considerato adeguato alle esigenze aziendali.
@@ -16,20 +16,21 @@ Le varie sezioni di seguito delineeranno in dettaglio le diverse tipologie di re
 I requisiti utente esprimono le necessità e le azioni che gli utenti devono
 poter compiere interagendo con il sistema.\\
 Quando si tratta di accedere al sistema, sia gli utenti amministrativi che gli utenti
-operativi devono essere in grado di autenticarsi senza intoppi. Questo permetterà loro di
-accedere alle funzionalità vitali dell'applicazione e svolgere i propri compiti in modo efficiente.
-
+operativi devono essere in grado di autenticarsi senza intoppi.\\ Questo permetterà loro di
+accedere alle funzionalità vitali dell'applicazione e svolgere i propri compiti in modo efficiente.\\
+\\
+Di seguito vengono riportati i requisiti utente per le due tipologie di utente dell'applicativo:
 \subsubsection{Operational}
 
 \begin{itemize}
     \item Aggiungere nuovi articoli al magazzino quando arrivano forniture.
+    \item Spostare articoli esistenti da una zona all'altra dfel magazzino.
     \item Rimuovere articoli esistenti dal magazzino quando vengono spediti ai clienti o trasferiti altrove.
 \end{itemize}
 
 \subsubsection{Administrator}
 
 \begin{itemize}
-    \item Tracciare ogni movimento degli articoli all'interno del magazzino per garantire una sincronizzazione accurata dell'inventario.
     \item Effettuare ordini quando il livello di inventario lo richiede per mantenere un adeguato livello di scorte.
     \item Monitorare attentamente la temperatura nelle zone refrigerate per prevenire la perdita di merce dovuta a condizioni non ottimali.
     \item Assegnare task giornalieri ai dipendenti operativi per mantenere un flusso di lavoro ordinato e fluido.
@@ -45,11 +46,11 @@ In particolare il sistema deve consentire agli utenti di:
 \begin{itemize}
     \item Registrarsi o effettuare il login all’apertura del sito.
     \item Visualizzare, aggiungere, modificare o eliminare risorse.
-    \item Poter monitorare informazioni sulle risorse (quantità, posizione, scadenza, temperatura cella per risorse refrigerate).
+    \item Poter monitorare informazioni sulle risorse (quantità, posizione, scadenza, temperatura zona per risorse refrigerate).
     \item Visualizzare i task assegnati agli operatori di magazzino da parte del personale amministrativo, includendo dettagli sulle attività da svolgere e le relative scadenze.
-    \item Gestire gli account degli utenti operativi, consentendo al personale amministrativo di modificare le credenziali di accesso e rimuovere gli account non più necessari.
+    \item Gestire gli account degli utenti, consentendo al personale amministrativo di modificare le credenziali di accesso e rimuovere gli account non più necessari.
     \item Gestire e assegnare task agli operatori di magazzino, permettendo al personale amministrativo di definire le attività, specificarne la priorità e stabilirne le scadenze.
-    \item Gestire gli ordini della merce, consentendo al personale amministrativo di creare, modificare, approvare o cancellare gli ordini.
+    \item Gestire gli ordini della merce, consentendo al personale amministrativo di creare o modificare gli ordini.
     \item Gestire la logistica e i prodotti del magazzino, permettendo al personale amministrativo di registrare le movimentazioni di merce, assegnare posizioni nel magazzino e categorizzare i prodotti.
 \end{itemize}
 
@@ -78,9 +79,9 @@ I requisiti di business previsti per WMS sono:
         \item Fornire un'interfaccia intuitiva per monitorare e gestire l'inventario del magazzino.
         \item Garantire una visualizzazione chiara delle risorse disponibili.
     \end{itemize}
-    \item \textbf{Controllo Automatico della Temperatura}:
+    \item \textbf{Controllo della Temperatura}:
     \begin{itemize}
-        \item Implementare un sistema per il monitoraggio e la regolazione automatica della temperatura.
+        \item Implementare un sistema per il monitoraggio della temperatura.
         \item Assicurare le condizioni ottimali per la conservazione dei prodotti.
     \end{itemize}
     \item \textbf{Accesso Facile per Utenti Operativi e Amministrativi}:

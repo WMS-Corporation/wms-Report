@@ -138,13 +138,11 @@ credenziali istituzionali.
 Dopo aver completato con successo la fase di autenticazione, l'utente viene reindirizzato alla propria homepage.\\
 Questa pagina offre una panoramica intuitiva delle metriche principali per la gestione del magazzino.\\
 La homepage è divisa in sezioni chiave.\\ Nella parte superiore, ci sono riquadri colorati che mostrano in tempo reale:
-il numero totale di prodotti, compiti, ordini e la temperatura della zona refrigerata.\\
+il numero totale di prodotti, task, ordini e la temperatura delle zone refrigerata.\\
 La sidebar a sinistra permette l'accesso rapido alle varie funzionalità dell'applicazione.\\
 Ogni sezione è accessibile tramite icone e descrizioni chiare, facilitando la navigazione.\\
-Al centro della pagina, sono visualizzati due grafici a torta.\\ Il primo grafico mostra lo stato attuale dei prodotti,
-suddiviso in in stock, out of stock e in transito.\\ Il secondo grafico visualizza lo stato degli ordini, distinguendo
-tra pendenti, completati e cancellati.\\
-L'header della pagina contiene il logo dell'applicazione, posizionato in alto a sinistra.\\
+Al centro della pagina, sono visualizzati due grafici a torta.\\
+L'header della pagina contiene il logo dell'applicazione, posizionato in alto a sinistra e cliccabile per una navigazione rapida sulla home.\\
 Questo layout garantisce una visione d'insieme delle operazioni del magazzino e un rapido accesso alle funzionalità
 necessarie.
 
@@ -156,7 +154,7 @@ necessarie.
 \end{figure}
 
 Cliccando sull'icona \textbf{Products} nella sidebar, l'utente viene reindirizzato alla pagina di gestione dei prodotti.\\
-Questa pagina offre una visualizzazione tabellare dei prodotti presenti nel magazzino.\\
+Questa pagina offre una visualizzazione tabellare delle tipologie dei prodotti presenti nel magazzino.\\
 Nella parte superiore è presente un pulsante \textbf{Add new} che consente di aggiungere nuovi prodotti.
 
 La tabella visualizza informazioni chiave per ogni prodotto e consente di modificarne o eliminarne i dettagli,
@@ -286,7 +284,7 @@ segnare il task come completato.
 
 
 \subsection{Design architetturale}
-Per quanto riguarda l'architettura del sistema, essa è stata progettata a partire dallo stack MERN che
+Per quanto riguarda l'architettura del sistema, essa è stata progettata utilizzando lo stack MERN che
 comprende le seguenti tecnologie:
 \begin{itemize}
     \item MongoDB
@@ -368,8 +366,8 @@ microservizio \textbf{Product} per ottenere ulteriori dettagli sui prodotti incl
     \caption{Diagramma di Sequenza delle Interazioni}
     \label{fig:sequenceDiagram}
 \end{figure}
-Il design architetturale del backend `e stato dunque organizzato adottando il \textbf{Domain-Driven Design (DDD)}.
-Questa è una metodologia di progettazione del software che si concentra sulla comprensione e sulla modellazione
+Il design architetturale del backend è stato dunque organizzato adottando il \textbf{Domain-Driven Design (DDD)}.
+\\Questa è una metodologia di progettazione del software che si concentra sulla comprensione e sulla modellazione
 del dominio di business all'interno del quale opera un'applicazione.\\ Nell'ambito dei microservizi,
 l'adozione del DDD è particolarmente vantaggiosa in quanto consente di suddividere il complesso dominio
 aziendale in sottodomini più gestibili, ciascuno dei quali rappresenta un microservizio.\\ Questo aiuta a
@@ -449,7 +447,7 @@ La sezione centrale include tre grafici:
 
 Sulla destra è presente un pulsante \textbf{Generate Report} per generare report dettagliati.\\
 La sidebar, situata a sinistra, consente una navigazione rapida e intuitiva tra le varie sezioni dell'applicazione.\\
-L'header in alto contiene il logo dell'applicazione a sinistra, mentre a destra è presente l'icona per il logout.
+L'header contiene il logo dell'applicazione, cliccabile per navigare alla home, e l'icona per il logout.
 
 \begin{figure}[H]
     \centering
@@ -459,10 +457,10 @@ L'header in alto contiene il logo dell'applicazione a sinistra, mentre a destra 
 \end{figure}
 
 Cliccando sulla voce \textbf{Products} nella sidebar, l'utente viene reindirizzato alla pagina di gestione dei prodotti.\\
-Questa pagina offre una visualizzazione tabellare dei prodotti presenti nel magazzino,
+Questa pagina offre una visualizzazione tabellare delle tipologie di prodotti presenti nel magazzino,
 mostrando le informazioni chiave per ogni prodotto.\\
 Nella colonna di sinistra, sono presenti delle icone che consento di modificare o eliminare il prodotto.\\
-In alto a destra è presente un pulsante \textbf{Add Product} che consente di aggiungere nuovi prodotti al sistema.
+In alto a destra è presente un pulsante \textbf{Add Product} che consente di aggiungere nuove tipologie di prodotti al sistema.
 
 \begin{figure}[H]
     \centering
@@ -801,10 +799,10 @@ Cliccando sul bottone \textbf{Save} vengono salvate le modifiche, mentre cliccan
     \label{fig:settingsPage}
 \end{figure}
 
-Cliccando sulla voce \textbf{Impostazioni} nella sidebar, l’utente viene reindirizzato alla pagina delle impostazioni,
+Cliccando sulla voce \textbf{Settings} nella sidebar, l’utente viene reindirizzato alla pagina delle impostazioni,
 accessibile sia per l'amministratore che per l'utente Operativo.\\
 Questa pagina consente di configurare le impostazioni generali, come il tema, e le impostazioni dell'account, come il nome utente e la password.\\
-In alto a destra è presente un pulsante \textbf{Save} per salvare le modifiche effettuate.
+In basso a sinistra è presente un pulsante \textbf{Save} per salvare le modifiche effettuate.
 
 \subsubsection{Operational}
 
