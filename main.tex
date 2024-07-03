@@ -1,9 +1,13 @@
 \documentclass{article}
+\usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[backend=biber,style=numeric,sorting=nyt]{biblatex}
+\usepackage{hyperref}
+\usepackage{minted}
 % Import all the packages
 \input{imports}
-\pagestyle{plain}
-
+\addbibresource{bibliography.bib}
 \begin{document}
 
 % Print the title (first page)
@@ -16,5 +20,6 @@
 \newpage
 
 \input{document/content}
-
+\section{Bibliografia}
+\printbibliography
 \end{document}

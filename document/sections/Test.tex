@@ -1,28 +1,33 @@
 \section{Test}
-Il sistema `e stato testato su tutti i principali Browser di riferimento, qual: Chrome, Edge, Firefox e Safari. In questo modo `e stata verificata la stabilit`a dell’applicativo e la sua portabilit`a, rendendolo indipendente dalle configurazioni scelte dai vari utenti. Oltre a test effettuati lato client, anche le API progettate lato server sono state verificate e il loro risultato validato attraverso unit test tramite Jest, per garantirne la correttezza e consistenza.
+Il sistema `e stato testato su tutti i principali Browser di riferimento, qual: Chrome, Edge, Firefox e Safari.\\
+In questo modo `e stata verificata la stabilit`a dell’applicativo e la sua portabilit`a, rendendolo indipendente dalle
+configurazioni scelte dai vari utenti.\\ Oltre a test effettuati lato client, anche le API progettate lato server sono
+state verificate e il loro risultato validato attraverso unit test tramite Jest, per garantirne la correttezza e consistenza.
 \subsection{Euristiche di Nielsen}
 
-L'idea dell'applicativo è nata dalla richiesta del committente di un software moderno e reattivo, si è reso quindi fondamentale testare l'applicativo facendo riferimento alle euristiche di Nielsen. Di seguito vengono riportate nel dettaglio le varie verifiche:
+L'idea dell'applicativo è nata dalla richiesta del committente di un software moderno e reattivo, si è reso
+quindi fondamentale testare l'applicativo facendo riferimento alle euristiche di Nielsen.\\ Di seguito vengono riportate nel dettaglio le varie verifiche:
+\begin{enumerate}
+    \item \textbf{Visibilità dello stato del sistema}: I link dell’applicativo sono stati progettati e organizzati per rendere l’applicazione il meno dispersiva possibile.\\ Ogni elemento cliccabile che prevede un reindirizzamento esplicita chiaramente la sua destinazione.\\ Le funzionalità non disponibili sono state indicate chiaramente utilizzando apposite segnalazioni.
 
-\textbf{Visibilità dello stato del sistema}: I link dell’applicativo sono stati progettati e organizzati per rendere l’applicazione il meno dispersiva possibile. Ogni elemento cliccabile che prevede un reindirizzamento esplicita chiaramente la sua destinazione. Le funzionalità non disponibili sono state indicate chiaramente utilizzando apposite segnalazioni.
+    \item \textbf{Corrispondenza tra il sistema e il mondo reale}: Tutti i componenti inseriti all’interno del sistema presentano una corrispondenza con i concetti conosciuti dagli utenti, come ad esempio gli ordini, i corridoi dei magazzini e gli scaffali.
 
-\textbf{Corrispondenza tra il sistema e il mondo reale}: Tutti i componenti inserite all’interno del sistema presentano una corrispondenza con i concetti conosciuti dagli utenti, come ad esempio gli ordini, i corridoi dei magazzini e gli scaffali.
+    \item \textbf{Controllo e libertà per l’utente}: Gli utenti hanno piena libertà di navigazione; tramite il menu è sempre possibile muoversi tra le pagine del sito.
 
-\textbf{Controllo e libertà per l’utente}: Gli utenti hanno piena libertà di navigazione; tramite il menu è sempre possibile muoversi tra le pagine del sito.
+    \item \textbf{Consistenza e standard}: Tutte le icone con un significato semantico sono le stesse, in ogni pagina dell’applicativo.\\ Inoltre, lo stile grafico risulta coerente e aderente a determinati standard in tutte le pagine dell’applicazione.
 
-\textbf{Consistenza e standard}: Tutte le icone con un significato semantico sono le stesse, in ogni pagina dell'applicativo. Inoltre, lo stile grafico risulta coerente e aderente a determinati standard in tutte le pagine dell’applicazione.
+    \item \textbf{Prevenzione dell’errore}: La logica è stata concepita per mantenere sempre l’utente in una posizione non ambigua, in cui non è possibile commettere errori o generare inconsistenze nel sistema.
 
-\textbf{Prevenzione dell’errore}: La logica è stata concepita per mantenere sempre l’utente in una posizione non ambigua, in cui non è possibile commettere errori o generare inconsistenze nel sistema.
+    \item \textbf{Riconoscimento piuttosto che ricordo}: Le interfacce sono progettate per essere riconoscibili e permettere all’utente di orientarsi facilmente.\\ Le azioni più importanti sono sempre visibili e facilmente raggiungibili.
 
-\textbf{Riconoscimento piuttosto che ricordo}: Le interfacce sono progettate per essere riconoscibili e permettere all’utente di orientarsi facilmente. Le azioni più importanti sono sempre visibili e facilmente raggiungibil.
+    \item \textbf{Flessibilità ed efficienza}: Le varie liste (utenti, task, ordini, ecc.) e l’intera interfaccia utente risultano consultabili in maniera efficiente e semplice.
 
-\textbf{Flessibilità ed efficienza}: Le varie liste (utenti, task, ordini, ecc ) e l'intera interfaccia utente risultano consultabili in maniera efficiente e semplice.
+    \item \textbf{Estetica e design minimalista}: L’estetica è stata concepita con un design minimalista, che mette in risalto nella giusta misura il contenuto informativo importante e minimizza le informazioni aggiuntive allo stretto necessario.
 
-\textbf{Estetica e design minimalista}: L’estetica è stata concepita con un design minimalista, che mette in risalto nella giusta misura il contenuto informativo importante e minimizza le informazioni aggiuntive allo stretto necessario.
+    \item \textbf{Facilità di riconoscimento, diagnosi e risoluzione degli errori}: Tutti gli errori sono riportati con descrizioni semplici e chiare del problema.\\ Inoltre, per tutte le operazioni critiche come le cancellazioni, è sempre richiesta una conferma all’utente.
 
-\textbf{Facilità di riconoscimento, diagnosi e risoluzione degli errori}: Tutti gli errori sono riportati con descrizioni semplici e chiare del problema. Inoltre, per tutte le operazioni critiche come le cancellazioni, è sempre richiesta una conferma all’utente.
-
-\textbf{Documentazione}: Il sistema non necessita di particolare documentazione, essendo molto intuitivo.
+    \item \textbf{Documentazione}: Il sistema non necessita di particolare documentazione, essendo molto intuitivo.
+\end{enumerate}
 
 \subsection{Test di usabilità}
 Oltre alle verifiche di usabilità tramite euristiche, sono stati raccolti feedback iterativi da un gruppo di utenti.\\
