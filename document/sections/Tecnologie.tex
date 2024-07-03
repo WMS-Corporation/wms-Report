@@ -3,7 +3,7 @@
 In questa sezione vengono descritte le tecnologie utilizzate nello sviluppo dell'applicativo che non rientrano nello stack tecnologico di base, evidenziando il loro ruolo e il motivo della loro scelta.
 
 \subsection{Socket.IO}
-Socket.IO è una libreria JavaScript per applicazioni web che consente la comunicazione in tempo reale bidirezionale tra client web e server\cite{socketio}.\\
+Socket.IO\cite{socketio} è una libreria JavaScript per applicazioni web che consente la comunicazione in tempo reale bidirezionale tra client web e server.\\
 È stata utilizzata per implementare la funzionalità di aggiornamento in tempo reale all'interno dell'applicativo, permettendo al backend
 di notificare il frontend di eventi specifici senza che quest'ultimo debba effettuare richieste periodiche al server.\\
 Nel contesto del nostro progetto, Socket.IO è stato impiegato per gestire eventi come \texttt{temperature-alert} e \texttt{lowStockAlert},
@@ -19,25 +19,25 @@ dalla sua efficienza nella gestione di connessioni in tempo reale e dalla sua ca
 garantendo così una comunicazione fluida anche in presenza di firewall o proxy.\\
 
 \subsection{Chart.js}
-Chart.js è una libreria JavaScript che permette la creazione di grafici dinamici e interattivi.\\
+Chart.js\cite{chart} è una libreria JavaScript che permette la creazione di grafici dinamici e interattivi.\\
 È stata utilizzata nel nostro progetto per visualizzare dati analitici in modo chiaro e intuitivo.\\
 La scelta di Chart.js è stata motivata dalla sua semplicità d'uso, dalla vasta gamma di tipi di grafici supportati\\
 e dalla possibilità di personalizzazione, che ci ha permesso di creare visualizzazioni su misura per le esigenze dell'applicativo.
 
 \subsection{Jest}
-Jest è un framework di testing per JavaScript sviluppato da Facebook, utilizzato per garantire l'affidabilità del
+Jest\cite{jest} è un framework di testing per JavaScript sviluppato da Facebook, utilizzato per garantire l'affidabilità del
 codice attraverso test unitari e di integrazione.\\
 Nel nostro progetto, Jest è stato scelto per la sua semplicità di configurazione, la sua capacità
 di mockare moduli e la sua integrazione con altri strumenti del nostro stack tecnologico.\\
 L'adozione di Jest ci ha permesso di mantenere un alto standard di qualità del codice, rilevando tempestivamente bug e regressioni.
 
 \subsection{Husky}
-Husky è uno strumento che permette di eseguire script personalizzati in risposta a specifici eventi di Git,
+Husky\cite{husky} è uno strumento che permette di eseguire script personalizzati in risposta a specifici eventi di Git,
 come i commit o i push.\\ È stato integrato nel nostro workflow per automatizzare controlli dei messaggi di commit
 al fine di adottare uno standard di Conventional Commit: questo ci ha permesso, attraverso il plugin Release-Please su GitHub, di ottenere le note di rilascio automatiche ad ogni rilascio.
 
 \subsection{ESLint}
-ESLint è uno strumento di linting per JavaScript e TypeScript, utilizzato per identificare e risolvere problemi nel codice.\\
+ESLint\cite{eslint} è uno strumento di linting per JavaScript e TypeScript, utilizzato per identificare e risolvere problemi nel codice.\\
 Nel nostro progetto, ESLint è stato configurato per applicare regole di stile e best practices, aiutando a mantenere un
 codice leggibile e uniforme.\\ La scelta di ESLint è stata motivata dalla sua flessibilità e dall'ampia gamma di regole
 disponibili, che ci ha permesso di personalizzare il linting secondo le esigenze specifiche del nostro team.
