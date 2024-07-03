@@ -30,7 +30,7 @@
 *.nls
 *.out
 *.pdf
-*.pyg
+*.pyg*
 *.run.xml
 *.snm
 *.synctex.gz
